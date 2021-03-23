@@ -2,13 +2,22 @@
   "name": "gregoryblood",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://www.gregoryblood.me/home",
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
+    "dependencies": "0.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-router-native": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-swipeable-views": "^0.13.9",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
