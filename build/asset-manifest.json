@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/home/static/css/main.9d5b29c0.chunk.css",
-    "main.js": "/home/static/js/main.53bc74b0.chunk.js",
-    "main.js.map": "/home/static/js/main.53bc74b0.chunk.js.map",
-    "runtime-main.js": "/home/static/js/runtime-main.ead70def.js",
-    "runtime-main.js.map": "/home/static/js/runtime-main.ead70def.js.map",
-    "static/js/2.9af2cd4c.chunk.js": "/home/static/js/2.9af2cd4c.chunk.js",
-    "static/js/2.9af2cd4c.chunk.js.map": "/home/static/js/2.9af2cd4c.chunk.js.map",
-    "static/js/3.04637e72.chunk.js": "/home/static/js/3.04637e72.chunk.js",
-    "static/js/3.04637e72.chunk.js.map": "/home/static/js/3.04637e72.chunk.js.map",
-    "index.html": "/home/index.html",
-    "static/css/main.9d5b29c0.chunk.css.map": "/home/static/css/main.9d5b29c0.chunk.css.map",
-    "static/js/2.9af2cd4c.chunk.js.LICENSE.txt": "/home/static/js/2.9af2cd4c.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/home/static/media/logo.6ce24c58.svg"
+    "main.css": "/website/build/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/website/build/static/js/main.7ab41d94.chunk.js",
+    "main.js.map": "/website/build/static/js/main.7ab41d94.chunk.js.map",
+    "runtime-main.js": "/website/build/static/js/runtime-main.081fda28.js",
+    "runtime-main.js.map": "/website/build/static/js/runtime-main.081fda28.js.map",
+    "static/js/2.9af2cd4c.chunk.js": "/website/build/static/js/2.9af2cd4c.chunk.js",
+    "static/js/2.9af2cd4c.chunk.js.map": "/website/build/static/js/2.9af2cd4c.chunk.js.map",
+    "static/js/3.04637e72.chunk.js": "/website/build/static/js/3.04637e72.chunk.js",
+    "static/js/3.04637e72.chunk.js.map": "/website/build/static/js/3.04637e72.chunk.js.map",
+    "index.html": "/website/build/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/website/build/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.9af2cd4c.chunk.js.LICENSE.txt": "/website/build/static/js/2.9af2cd4c.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/website/build/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ead70def.js",
+    "static/js/runtime-main.081fda28.js",
     "static/js/2.9af2cd4c.chunk.js",
     "static/css/main.9d5b29c0.chunk.css",
-    "static/js/main.53bc74b0.chunk.js"
+    "static/js/main.7ab41d94.chunk.js"
   ]
 }
