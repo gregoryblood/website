@@ -158,7 +158,7 @@ const NavLink = styled.a`
   font-weight: bold;
   padding: 10px 20px ;
   transition-duration: 0.6s;
-  -webkit-transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s; 
   border-style: solid;
   border-color: transparent;
   color: white;
