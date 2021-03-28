@@ -2,7 +2,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { AiOutlineGithub,  AiFillLinkedin} from 'react-icons/ai';
+import { FiMail} from 'react-icons/fi';
 import {flavorColor, flavorColor2} from './Colors';
+import { Link } from "react-scroll";
 
 var i = 0;
 const heys = ["Hello", "Bonjour", "你好", "Howdy", "Salve", "Hey", "こんにちは", "Hola", "안녕하세요"];
@@ -10,40 +12,77 @@ export class Title extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      word: "Hello"
+      word: "Hello",
+      theposition: 0 
     };
   }
   
   componentDidMount() {
-
-    
     this.interval = setInterval(() => this.setState({ word: heys[i++] }), 500);
+    window.addEventListener('scroll', this.listenToScroll);
   }
   componentDidUpdate() {
-    console.log("==Updated");
-    if (i == heys.length)
+    //.log("==Updated");
+    if (i === heys.length)
       i = 0;
   }
   componentWillUnmount() {
-
     clearInterval(this.interval);
+    window.removeEventListener('scroll', this.listenToScroll);
+  }
+  listenToScroll = () => {
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop
+  
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight
+  
+    const scrolled = winScroll / height
+  
+    if (scrolled > 0.05) {
+      this.setState({
+        scrolled: true,
+      })
+    }
+    else {
+      this.setState({
+        scrolled: false,
+      })
+    }
   }
   render() {   
+
     return (
-      <Fade>
-        <Name>Gregory Blood</Name>
-        <NavLinks>
-          <NavLink>
-            Work
-          </NavLink>
-          <NavLink>
-            Skills
-          </NavLink>
-          <NavLinkButton  href={`mailto: gregoryblood1998@gmail.com?`}>
-            Contact 
-          </NavLinkButton>
-        </NavLinks>
-        <HomeBody>
+      <React.Fragment>
+        <div id="home"></div>
+        <NavBar>
+          <Name activeClass="active"
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={400}>
+          Gregory Blood</Name>
+          <NavLinks>
+            <NavLink activeClass="active"
+                      to="work"
+                      spy={true}
+                      smooth={true}
+                      offset={-200}
+                      duration={400}>
+              Work
+            </NavLink>
+            <NavLink>
+              Skills
+            </NavLink>
+            <NavLinkButton target='_blank' href={'https://raw.githubusercontent.com/gregoryblood/gregoryblood.github.io/master/website/resume.pdf'}>
+              Resume 
+            </NavLinkButton>
+          </NavLinks>
+        </NavBar>
+        <Fade >
+        <HomeBody >
             <Greeting>
               <Flavor>
                 {this.state.word} 
@@ -55,9 +94,16 @@ export class Title extends React.Component {
             <Flavor>
               I design, build, and deliver. 
             </Flavor>
-            <WorkButton>Look at my work</WorkButton>
+            
+            
           </HomeBody>
-        <Block/>
+          {this.state.scrolled ? 
+            <WorkButton scrolled href={`mailto: gregoryblood1998@gmail.com?`}><MailButton/></WorkButton>
+            :
+            <WorkButton href={`mailto: gregoryblood1998@gmail.com?`}>Get In Touch</WorkButton>
+          }
+
+      </Fade>
         <Icons>
           <Icon target="_blank" href={`https://github.com/gregoryblood`}>
             <AiOutlineGithub/>
@@ -66,54 +112,36 @@ export class Title extends React.Component {
             <AiFillLinkedin/>
           </Icon>
         </Icons>
-        
-        
-      </Fade>
+      </React.Fragment>
+      
     );
   }
 }
 const Fade = styled.div `
-  animation: fadeIn ease 4s;
-  -webkit-animation: fadeIn ease 4s;
-  -moz-animation: fadeIn ease 4s;
-  -o-animation: fadeIn ease 4s;
-  -ms-animation: fadeIn ease 4s;
-  @keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-  }
-  
-  @-moz-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-  }
-  
-  @-webkit-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-  }
-  
-  @-o-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-  }
-  
-  @-ms-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-  }
+
 `;
-const Name = styled.a `
+const NavBar = styled.div `
+  position: fixed;
+  background: black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 10;
+  box-shadow: 0px 3px 12px 12px rgba(0, 0, 0, .2);
+`;
+const Name = styled(Link) `
   text-decoration: none;
   cursor: pointer;
   position: fixed;
   color: white;
-  font-size: 48px;
+  font-size: 36px;
   font-weight: bold;
-  padding: 20px 20px  0 20px;
+  margin-top: 5px;
+  padding: 20px 20px 0 0;
   transition-duration: 0.6s;
   -webkit-transition-duration: 0.6s;
-  left: 1vw;
+  left: 5vw;
 
   &:hover {
     color: ${flavorColor}
@@ -138,6 +166,7 @@ const Block = styled.div`
     position: fixed;   
 `;
 const NavLinks = styled.div `
+  
   position: fixed;
   top: 20px;
   right: 40px;
@@ -150,11 +179,11 @@ const NavLinks = styled.div `
   }
   
 `;
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   padding: 10px 20px ;
   transition-duration: 0.6s;
@@ -171,9 +200,10 @@ const NavLinkButton = styled.a`
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
-  padding: 10px 20px ;
+  margin-left: 15px;
+  padding: 10px 20px;
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
   background: ${flavorColor};
@@ -181,6 +211,7 @@ const NavLinkButton = styled.a`
   border-style: solid;
   border-color: transparent;
   color: black;
+  height: 30px;
   &:hover {
     color: ${flavorColor};
     border-color: ${flavorColor};
@@ -191,7 +222,7 @@ const HomeBody = styled.div `
   font-weight: bold;
   position: fixed;
   top: 35vh;
-  padding: 10px 10vw;
+  padding: 10px 5vw;
   color: #979fab;
   @media(max-width: 813px) {
     top: 20vh;
@@ -203,8 +234,19 @@ const Headline = styled.div `
   font-weight: bold;
   text-align: left;
   padding: 0px 0;
+  left: -500px;
   @media(max-width: 813px) {
     font-size: 16x;
+  }
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide 0.5s forwards;
+  animation-delay: 2s;
+  @-webkit-keyframes slide {
+      100% { left: 0; }
+  }
+  @keyframes slide {
+      100% { left: 0; }
   }
 `;
 const Greeting = styled.div `
@@ -218,6 +260,16 @@ const Flavor = styled.div `
   text-align: left;
   padding: 10px 0;
 `;
+const MailButton = styled(FiMail) `
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  height: 30px;
+  width: 30px;
+
+`;
 const WorkButton = styled.a `
   text-decoration: none;
   background-color: ${flavorColor};
@@ -225,28 +277,39 @@ const WorkButton = styled.a `
   display: block;
   color: black;
   font-weight: bold;
-  width: 250px;
-  font-size: 28px;
-  margin-top: 20px;
-  padding: 20px 10px;
   border-style: solid;
   border-radius: 8px;
   border-color: transparent;
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
+
+
+  font-size:  28px;
+  position: ${props => props.scrolled ? 'fixed' : 'fixed'};
+  top: ${props => props.scrolled ? '12px' : 'calc(30vh + 250px)'};
+  left: ${props => props.scrolled ? 'calc( 100vw - 475px)' : ' 5vw'};
+
+  margin-top: ${props => props.scrolled ? '0' : '20px'};
+  z-index: ${props => props.scrolled ? '12' : '0'};
+  width: ${props => props.scrolled ? '60px' : '250px'};
+  height: ${props => props.scrolled ? 'auto' : 'auto'};
+  border-radius:  ${props => props.scrolled ? '50%' : '8px'};
+  border-color:  'transparent' ;
+  padding:  ${props => props.scrolled ? '0px 0px' : '20px 10px'};
   &:hover {
-    background-color: black;
+    background-color: transparent;
     border-color: ${flavorColor};
     color: ${flavorColor};
   }
 `;
+
 const Icons = styled.div `
   text-decoration: none;
   position: fixed;
   bottom: 2vh;
   right: 2vw;
   font-size: 50px;
-  
+  z-index: 2;
 `;
 const Icon = styled.a `
   text-decoration: none;
@@ -259,6 +322,8 @@ const Icon = styled.a `
   color: black;
   transition-duration: 0.6s;
   -webkit-transition-duration: 0.6s;
+  z-index: 2;
+  background: white;
   &:hover {
     color: white;
     background: black;

@@ -2,7 +2,7 @@
   "name": "gregoryblood",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.gregoryblood.me/website/build/",
+  "homepage": "https://www.gregoryblood.me/portfolio/",
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
@@ -17,6 +17,7 @@
     "react-router-dom": "^5.2.0",
     "react-router-native": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-scroll": "^1.8.2",
     "react-swipeable-views": "^0.13.9",
     "web-vitals": "^1.1.1"
   },
