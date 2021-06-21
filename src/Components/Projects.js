@@ -9,11 +9,12 @@ import mm1 from '../Images/mm1.png';
 import osu from '../Images/osu.PNG';
 import { NavLink } from 'react-router-dom';
 
+var scroll = 0;
 export class Projects extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      theposition: 0 
+      scroll: 0 
     };
   }
   
@@ -32,14 +33,15 @@ export class Projects extends React.Component {
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight
   
-    const scrolled = winScroll / height
-  
+    const scrolled = winScroll / height;
     if (scrolled > 0.1) {
-      this.setState({
-        scoll: scrolled,
-      })
+      if (scrolled > scroll) {
+        scroll = scrolled;
+        this.setState({
+          scoll: scrolled,
+        })
+      }
     }
-
   }
   render() {   
     const scroll = this.state.scoll;
@@ -48,63 +50,58 @@ export class Projects extends React.Component {
         <br/>
         
         <CardArea id="work"  >
-          <Card to={`/capstone`}  show={scroll > 0.12} left>
-              <CardContent left/>
+          <Card to={`/capstone`}  show={scroll > 0.12} >
+              
               <Img src={ osu }/>
               <CardWords>
                 <CardTitle>Capstone</CardTitle>
-                <CardDescription>
+                <CardFlavor>
                 The 'I' in 'Team'
-                </CardDescription>  
+                </CardFlavor>  
               </CardWords>
           </Card>
           <Card to={`/purehoney`} show={scroll > 0.25}>
-            <CardContent/>
             <Img src={ph1}/>
             <CardWords>
-              <CardDescription>
+              <CardFlavor>
               A Website to Buy Honey
-              </CardDescription>
+              </CardFlavor>
             </CardWords>
           </Card>
-          <Card to={`/musicmajik`} show={scroll > 0.38} left>
-            <CardContent left/>
+          <Card to={`/musicmajik`} show={scroll > 0.38} >
             <Img src={mm1}/>
             <CardWords>
-              <CardDescription>
+              <CardFlavor>
               Organize your Music... Fast
-              </CardDescription>
+              </CardFlavor>
             </CardWords>
           </Card>
         </CardArea>
         <Games>Games</Games> 
         <CardArea>
-          <Card to={`/kings-gambit`} show={scroll > 0.62} left>
-            <CardContent left/>
+          <Card to={`/kings-gambit`} show={scroll > 0.62} >
             <Img src={ kg1 }/>
             <CardWords>
-              <CardDescription>
+              <CardFlavor>
               Chess-like + Rogue-like
-              </CardDescription>
+              </CardFlavor>
             </CardWords>
           </Card>
           <Card to={`/master-blaster`} show={scroll > 0.75}>
-            <CardContent/>
             <Img src={ mb3 }/>
             <CardWords>
-              <CardDescription>
+              <CardFlavor>
               A Retro Game with a Twist
-              </CardDescription>
+              </CardFlavor>
             </CardWords>
             
           </Card>
-          <Card to={`/ships`} show={scroll > 0.88} left>
-            <CardContent left/>
+          <Card to={`/ships`} show={scroll > 0.88} >
             <Img src={ships}/>
             <CardWords>
-              <CardDescription>
+              <CardFlavor>
               A Party Game for Pirates
-              </CardDescription>
+              </CardFlavor>
             </CardWords>
           </Card>
         </CardArea>
@@ -132,38 +129,25 @@ const Card = styled(NavLink)`
   text-decoration: none;
   display: block;
   width: 50vw;
-  background: black;
-  margin-bottom: 100px;
+  margin-bottom: 0px;
   height: 600px;
-  transition-duration: 0.4s;
+  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
   border-radius: 16px;
   position: relative;
   width: 100%;  
-  ${props => props.left ? 
-    'left: ' + (props.show ? '0' : '-100vw')+';'
-    :
-    'right: ' + (props.show ? '0' : '-100vw')+';'
-  }
+  opacity: ${props => props.show ? 1 : 0}
   
 
 `;
-const CardContent = styled.div `
-  position: absolute;
-  background: black;
-  height: 100%;
-  width: 100vw;
 
-  z-index: -1;
-  border-radius: 16px;
-  left: ${props => props.left ? '-75vw' : '0'};
-`;
 const Img = styled.img `
   position: relative;
   z-index: 2;
-  height: 75%;
-  width: 75%;
+  height: 60%;
+  width: 60%;
   border-radius: 16px;
-  margin-top: 40px;
+  margin-top: 0px;
 
   float: center;
   transition-duration: 0.6s;
@@ -182,7 +166,8 @@ const CardWords = styled.div `
   z-index: 2;
   right: 30px;
   height: 100px;
-  background: rgba( 255, 255, 255, 0.5 );
+  width: 300px;
+  background: black;
   box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.37 );
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
@@ -195,16 +180,16 @@ const CardTitle = styled.div `
   text-align: right;
   font-size: 36px;
   font-weight: 800;
-  color: black;
-  z-index: 1;
+  color: white;
 `;
 
-const CardDescription = styled.div `
+const CardFlavor = styled.div `
   font-size: 24px;
   text-align: right;
   padding: 0 20px;
-  color: white;
-  z-index: 1;
+  color: gray;
+
+  font-style: italic;
 `;
 const Games = styled.div `
   font-size: 38px;

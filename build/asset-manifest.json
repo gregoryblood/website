@@ -1,23 +1,30 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.9d5b29c0.chunk.css",
-    "main.js": "/portfolio/static/js/main.479918b8.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.479918b8.chunk.js.map",
-    "runtime-main.js": "/portfolio/static/js/runtime-main.cc5a2fa3.js",
-    "runtime-main.js.map": "/portfolio/static/js/runtime-main.cc5a2fa3.js.map",
-    "static/js/2.9af2cd4c.chunk.js": "/portfolio/static/js/2.9af2cd4c.chunk.js",
-    "static/js/2.9af2cd4c.chunk.js.map": "/portfolio/static/js/2.9af2cd4c.chunk.js.map",
-    "static/js/3.04637e72.chunk.js": "/portfolio/static/js/3.04637e72.chunk.js",
-    "static/js/3.04637e72.chunk.js.map": "/portfolio/static/js/3.04637e72.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.f4ae8aa1.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.f4ae8aa1.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.ea9fac03.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.ea9fac03.js.map",
+    "static/js/2.ff2f7676.chunk.js": "/portfolio/static/js/2.ff2f7676.chunk.js",
+    "static/js/2.ff2f7676.chunk.js.map": "/portfolio/static/js/2.ff2f7676.chunk.js.map",
+    "static/js/3.6bdbaa7a.chunk.js": "/portfolio/static/js/3.6bdbaa7a.chunk.js",
+    "static/js/3.6bdbaa7a.chunk.js.map": "/portfolio/static/js/3.6bdbaa7a.chunk.js.map",
     "index.html": "/portfolio/index.html",
     "static/css/main.9d5b29c0.chunk.css.map": "/portfolio/static/css/main.9d5b29c0.chunk.css.map",
-    "static/js/2.9af2cd4c.chunk.js.LICENSE.txt": "/portfolio/static/js/2.9af2cd4c.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/portfolio/static/media/logo.6ce24c58.svg"
+    "static/js/2.ff2f7676.chunk.js.LICENSE.txt": "/portfolio/static/js/2.ff2f7676.chunk.js.LICENSE.txt",
+    "static/media/kg1.f2524a9f.PNG": "/portfolio/static/media/kg1.f2524a9f.PNG",
+    "static/media/mb3.9538302e.png": "/portfolio/static/media/mb3.9538302e.png",
+    "static/media/mm1.c85f3f59.png": "/portfolio/static/media/mm1.c85f3f59.png",
+    "static/media/osu.cb6113ca.PNG": "/portfolio/static/media/osu.cb6113ca.PNG",
+    "static/media/ph1.7603c0ff.jpg": "/portfolio/static/media/ph1.7603c0ff.jpg",
+    "static/media/ships.2c333a60.png": "/portfolio/static/media/ships.2c333a60.png",
+    "static/media/wave.dd8dd67b.svg": "/portfolio/static/media/wave.dd8dd67b.svg",
+    "static/media/whattowear.0bb55bf5.png": "/portfolio/static/media/whattowear.0bb55bf5.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.cc5a2fa3.js",
-    "static/js/2.9af2cd4c.chunk.js",
+    "static/js/runtime-main.ea9fac03.js",
+    "static/js/2.ff2f7676.chunk.js",
     "static/css/main.9d5b29c0.chunk.css",
-    "static/js/main.479918b8.chunk.js"
+    "static/js/main.f4ae8aa1.chunk.js"
   ]
 }

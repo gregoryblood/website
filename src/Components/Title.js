@@ -97,12 +97,19 @@ export class Title extends React.Component {
             
             
           </HomeBody>
+          <WorkButton activeClass="active"
+                      to="work"
+                      spy={true}
+                      smooth={true}
+                      offset={-200}
+                      duration={400}>
+          See my Work
+          </WorkButton>
           {this.state.scrolled ? 
-            <WorkButton scrolled href={`mailto: gregoryblood1998@gmail.com?`}><MailButton/></WorkButton>
-            :
-            <WorkButton href={`mailto: gregoryblood1998@gmail.com?`}>Get In Touch</WorkButton>
+          <MailButtonLink scrolled href={`mailto: gregoryblood1998@gmail.com?`}><MailButton/></MailButtonLink>
+          :
+          <MailButtonLink href={`mailto: gregoryblood1998@gmail.com?`}><MailButton/></MailButtonLink>
           }
-
       </Fade>
         <Icons>
           <Icon target="_blank" href={`https://github.com/gregoryblood`}>
@@ -128,7 +135,7 @@ const NavBar = styled.div `
   width: 100%;
   height: 90px;
   z-index: 10;
-  box-shadow: 0px 3px 12px 12px rgba(0, 0, 0, .2);
+  box-shadow: 0px 3px 12px 12px black;
 `;
 const Name = styled(Link) `
   text-decoration: none;
@@ -270,7 +277,7 @@ const MailButton = styled(FiMail) `
   width: 30px;
 
 `;
-const WorkButton = styled.a `
+const WorkButton = styled(Link) `
   text-decoration: none;
   background-color: ${flavorColor};
   cursor: pointer;
@@ -284,18 +291,48 @@ const WorkButton = styled.a `
   -webkit-transition-duration: 0.4s;
 
 
-  font-size:  28px;
+  font-size:  24px;
   position: ${props => props.scrolled ? 'fixed' : 'fixed'};
-  top: ${props => props.scrolled ? '12px' : 'calc(30vh + 250px)'};
+  top: ${props => props.scrolled ? '12px' : 'calc(35vh + 175px)'};
   left: ${props => props.scrolled ? 'calc( 100vw - 475px)' : ' 5vw'};
 
   margin-top: ${props => props.scrolled ? '0' : '20px'};
   z-index: ${props => props.scrolled ? '12' : '0'};
-  width: ${props => props.scrolled ? '60px' : '250px'};
+  width: ${props => props.scrolled ? '60px' : '200px'};
   height: ${props => props.scrolled ? 'auto' : 'auto'};
   border-radius:  ${props => props.scrolled ? '50%' : '8px'};
   border-color:  'transparent' ;
   padding:  ${props => props.scrolled ? '0px 0px' : '20px 10px'};
+  &:hover {
+    background-color: transparent;
+    border-color: ${flavorColor};
+    color: ${flavorColor};
+  }
+`;
+const MailButtonLink = styled.a `
+  text-decoration: none;
+  background-color: ${flavorColor};
+  cursor: pointer;
+  display: block;
+  color: black;
+  font-weight: bold;
+  border-style: solid;
+  border-radius: 50%;
+  border-color: transparent;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+
+  font-size:  28px;
+  position: ${props => props.scrolled ? 'fixed' : 'fixed'};
+  top: ${props => props.scrolled ? '12px' : 'calc(35vh + 175px)'};
+  left: ${props => props.scrolled ? 'calc( 100vw - 440px)' : ' calc(300px + 5vw )'};
+  margin-top: ${props => props.scrolled ? '0' : '21px'};
+  z-index: ${props => props.scrolled ? '12' : '0'};
+  padding: ${props => props.scrolled ? '0' : '4px 4px'};
+  margin-left: -40px;
+  width: '60px';
+  height: auto;
+  border-color:  'transparent' ;
   &:hover {
     background-color: transparent;
     border-color: ${flavorColor};
