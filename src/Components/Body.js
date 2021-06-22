@@ -36,7 +36,6 @@ const Base = styled.div`
     margin: 0;
     padding-bottom: 50vh;
     overflow-x: visible;
-
 `;
 
 const Core = styled.div`
@@ -44,8 +43,6 @@ const Core = styled.div`
     position: relative;
     top: 150px;
     max-width: 900px;
-    
-    z-index: 0;
 `;
 
 const Wave = styled.img `
@@ -56,18 +53,7 @@ const Wave = styled.img `
   z-index: 0;
   height: auto;
   pointer-events: none;
-  
-`;
-const Wave2 = styled.img `
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: -2vw;
-  z-index: 0;
-  height: auto;
-  pointer-events: none;
-  -webkit-transform: scaleY(-1);
-  transform: scaleY(-1);
 
 `;
+
 export default Body;

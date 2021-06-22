@@ -1,4 +1,3 @@
-
 import React from 'react';
 import styled from '@emotion/styled';
 import { AiOutlineGithub,  AiFillLinkedin} from 'react-icons/ai';
@@ -65,7 +64,7 @@ export class Title extends React.Component {
                   duration={400}>
           Gregory Blood</Name>
           <NavLinks>
-            <NavLink activeClass="active"
+            <NavLink  activeClass="active"
                       to="work"
                       spy={true}
                       smooth={true}
@@ -73,7 +72,12 @@ export class Title extends React.Component {
                       duration={400}>
               Work
             </NavLink>
-            <NavLink>
+            <NavLink  activeClass="active"
+                      to="work"
+                      spy={true}
+                      smooth={true}
+                      offset={-200}
+                      duration={400}>
               Skills
             </NavLink>
             <NavLinkButton target='_blank' href={'https://raw.githubusercontent.com/gregoryblood/gregoryblood.github.io/master/website/resume.pdf'}>
@@ -125,7 +129,6 @@ export class Title extends React.Component {
   }
 }
 const Fade = styled.div `
-
 `;
 const NavBar = styled.div `
   position: fixed;
@@ -149,7 +152,6 @@ const Name = styled(Link) `
   transition-duration: 0.6s;
   -webkit-transition-duration: 0.6s;
   left: 5vw;
-
   &:hover {
     color: ${flavorColor}
   }
@@ -157,21 +159,7 @@ const Name = styled(Link) `
     display: none;
   }
 `;
-const Block = styled.div`
-    background-color:white;
-    z-index: -1;
-    width:100vh;
 
-    height:100vh;
-    color:white;
-
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    bottom: -50vh;
-    right: -50vh;
-    position: fixed;   
-`;
 const NavLinks = styled.div `
   
   position: fixed;
@@ -180,9 +168,7 @@ const NavLinks = styled.div `
   @media(max-width: 813px) {
     width: 100%;
     right: 0;
-    top: auto;
-    bottom: 20px;
-    
+    top: 20px;
   }
   
 `;
@@ -237,14 +223,11 @@ const HomeBody = styled.div `
 `;
 const Headline = styled.div `
   color: white;
-  font-size: 64px;
   font-weight: bold;
   text-align: left;
   padding: 0px 0;
   left: -500px;
-  @media(max-width: 813px) {
-    font-size: 16x;
-  }
+  
   -webkit-animation: slide 0.5s forwards;
   -webkit-animation-delay: 2s;
   animation: slide 0.5s forwards;
@@ -254,6 +237,10 @@ const Headline = styled.div `
   }
   @keyframes slide {
       100% { left: 0; }
+  }
+  font-size: 64px;
+  @media(max-width: 813px) {
+    font-size: 48px;
   }
 `;
 const Greeting = styled.div `
@@ -275,7 +262,6 @@ const MailButton = styled(FiMail) `
   padding: 15px;
   height: 30px;
   width: 30px;
-
 `;
 const WorkButton = styled(Link) `
   text-decoration: none;
@@ -289,20 +275,20 @@ const WorkButton = styled(Link) `
   border-color: transparent;
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
-
-
-  font-size:  24px;
+  font-size:  32px;
   position: ${props => props.scrolled ? 'fixed' : 'fixed'};
   top: ${props => props.scrolled ? '12px' : 'calc(35vh + 175px)'};
+  @media(max-width: 813px) {
+    top: ${props => props.scrolled ? '12px' : 'calc(35vh + 230px)'};
+  }
   left: ${props => props.scrolled ? 'calc( 100vw - 475px)' : ' 5vw'};
-
   margin-top: ${props => props.scrolled ? '0' : '20px'};
   z-index: ${props => props.scrolled ? '12' : '0'};
   width: ${props => props.scrolled ? '60px' : '200px'};
   height: ${props => props.scrolled ? 'auto' : 'auto'};
   border-radius:  ${props => props.scrolled ? '50%' : '8px'};
   border-color:  'transparent' ;
-  padding:  ${props => props.scrolled ? '0px 0px' : '20px 10px'};
+  padding:  ${props => props.scrolled ? '0px 0px' : '15px 20px'};
   &:hover {
     background-color: transparent;
     border-color: ${flavorColor};
@@ -321,16 +307,22 @@ const MailButtonLink = styled.a `
   border-color: transparent;
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
-
   font-size:  28px;
   position: ${props => props.scrolled ? 'fixed' : 'fixed'};
   top: ${props => props.scrolled ? '12px' : 'calc(35vh + 175px)'};
-  left: ${props => props.scrolled ? 'calc( 100vw - 440px)' : ' calc(300px + 5vw )'};
+  @media(max-width: 813px) {
+    top: ${props => props.scrolled ? 'auto' : 'calc(35vh + 230px)'};
+    bottom: ${props => props.scrolled ? '185px' : 'auto'};
+  }
+  left: ${props => props.scrolled ? 'calc( 100vw - 440px)' : ' calc(310px + 5vw )'};
+  @media(max-width: 813px) {
+    left: ${props => props.scrolled ? '50px' : ' calc(310px + 5vw )'};
+  }
   margin-top: ${props => props.scrolled ? '0' : '21px'};
   z-index: ${props => props.scrolled ? '12' : '0'};
   padding: ${props => props.scrolled ? '0' : '4px 4px'};
   margin-left: -40px;
-  width: '60px';
+  width: 60px;
   height: auto;
   border-color:  'transparent' ;
   &:hover {
@@ -346,7 +338,11 @@ const Icons = styled.div `
   bottom: 2vh;
   right: 2vw;
   font-size: 50px;
-  z-index: 2;
+  z-index: 20;
+  @media(max-width: 813px) {
+    right: auto;
+    left: 2vw;
+  }
 `;
 const Icon = styled.a `
   text-decoration: none;
@@ -361,6 +357,7 @@ const Icon = styled.a `
   -webkit-transition-duration: 0.6s;
   z-index: 2;
   background: white;
+  
   &:hover {
     color: white;
     background: black;
