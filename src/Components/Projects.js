@@ -63,6 +63,7 @@ export class Projects extends React.Component {
           <Card to={`/purehoney`} show={scroll > 0.25}>
             <Img src={ph1}/>
             <CardWords>
+              <CardTitle>Pure Honey</CardTitle>
               <CardFlavor>
               A Website to Buy Honey
               </CardFlavor>
@@ -71,6 +72,7 @@ export class Projects extends React.Component {
           <Card to={`/musicmajik`} show={scroll > 0.38} >
             <Img src={mm1}/>
             <CardWords>
+              <CardTitle>Music Majik</CardTitle>
               <CardFlavor>
               Organize your Music... Fast
               </CardFlavor>
@@ -82,6 +84,7 @@ export class Projects extends React.Component {
           <Card to={`/kings-gambit`} show={scroll > 0.62} >
             <Img src={ kg1 }/>
             <CardWords>
+              <CardTitle>King's Gambit</CardTitle>
               <CardFlavor>
               Chess-like + Rogue-like
               </CardFlavor>
@@ -90,6 +93,7 @@ export class Projects extends React.Component {
           <Card to={`/master-blaster`} show={scroll > 0.75}>
             <Img src={ mb3 }/>
             <CardWords>
+              <CardTitle>Master Blaster</CardTitle>
               <CardFlavor>
               A Retro Game with a Twist
               </CardFlavor>
@@ -99,6 +103,7 @@ export class Projects extends React.Component {
           <Card to={`/ships`} show={scroll > 0.88} >
             <Img src={ships}/>
             <CardWords>
+              <CardTitle>Ships!</CardTitle>
               <CardFlavor>
               A Party Game for Pirates
               </CardFlavor>
@@ -127,7 +132,7 @@ const CardArea = styled.div`
 `;
 const Card = styled(NavLink)`
   text-decoration: none;
-  display: block;
+  display: flex;
   width: 50vw;
   margin-bottom: 0px;
   height: 600px;
@@ -137,8 +142,6 @@ const Card = styled(NavLink)`
   position: relative;
   width: 100%;  
   opacity: ${props => props.show ? 1 : 0}
-  
-
 `;
 
 const Img = styled.img `
@@ -162,12 +165,13 @@ const Img = styled.img `
 `;
 const CardWords = styled.div `
   position: absolute;
-  top: 30px;
+  top: 200px;
   z-index: 2;
   right: 30px;
   height: 100px;
   width: 300px;
-  background: black;
+  background: #0b0c10;
+  padding: 20px;
   box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.37 );
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
@@ -175,8 +179,6 @@ const CardWords = styled.div `
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 `;
 const CardTitle = styled.div `
-  padding: 20px;
-  padding-bottom: 0px;
   text-align: right;
   font-size: 36px;
   font-weight: 800;
@@ -186,9 +188,7 @@ const CardTitle = styled.div `
 const CardFlavor = styled.div `
   font-size: 24px;
   text-align: right;
-  padding: 0 20px;
   color: gray;
-
   font-style: italic;
 `;
 const Games = styled.div `

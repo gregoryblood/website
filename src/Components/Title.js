@@ -88,9 +88,7 @@ export class Title extends React.Component {
         <Fade >
         <HomeBody >
             <Greeting>
-              <Flavor>
-                {this.state.word} 
-              </Flavor>
+              {this.state.word} 
             </Greeting>
             <Headline>
               Do you need work done right?
@@ -132,13 +130,12 @@ const Fade = styled.div `
 `;
 const NavBar = styled.div `
   position: fixed;
-  background: black;
+  background: rgb(11, 12, 16, 0.99);
   top: 0;
   left: 0;
   width: 100%;
   height: 90px;
   z-index: 10;
-  box-shadow: 0px 3px 12px 12px black;
 `;
 const Name = styled(Link) `
   text-decoration: none;
@@ -164,7 +161,7 @@ const NavLinks = styled.div `
   
   position: fixed;
   top: 20px;
-  right: 40px;
+  right: 5vw;
   @media(max-width: 813px) {
     width: 100%;
     right: 0;
@@ -203,12 +200,12 @@ const NavLinkButton = styled.a`
   border-radius: 8px;
   border-style: solid;
   border-color: transparent;
-  color: black;
+  color: #0b0c10;
   height: 30px;
   &:hover {
     color: ${flavorColor};
     border-color: ${flavorColor};
-    background: black;
+    background: #0b0c10;
   }
 `;
 const HomeBody = styled.div `
@@ -222,7 +219,7 @@ const HomeBody = styled.div `
   }
 `;
 const Headline = styled.div `
-  color: white;
+  color: black;
   font-weight: bold;
   text-align: left;
   padding: 0px 0;
@@ -247,12 +244,15 @@ const Greeting = styled.div `
   position: absolute;
   top: -50px;
   color: ${flavorColor2};
-  
+  font-size: 36px;
+  text-align: left;
+  padding: 10px 0;
 `;
 const Flavor = styled.div `
   font-size: 36px;
   text-align: left;
   padding: 10px 0;
+  color: #535353;
 `;
 const MailButton = styled(FiMail) `
   display: flex;
@@ -268,7 +268,7 @@ const WorkButton = styled(Link) `
   background-color: ${flavorColor};
   cursor: pointer;
   display: block;
-  color: black;
+  color: #f5f5f5;
   font-weight: bold;
   border-style: solid;
   border-radius: 8px;
@@ -287,20 +287,19 @@ const WorkButton = styled(Link) `
   width: ${props => props.scrolled ? '60px' : '200px'};
   height: ${props => props.scrolled ? 'auto' : 'auto'};
   border-radius:  ${props => props.scrolled ? '50%' : '8px'};
-  border-color:  'transparent' ;
+  border-color: ${flavorColor};
   padding:  ${props => props.scrolled ? '0px 0px' : '15px 20px'};
   &:hover {
-    background-color: transparent;
+    background-color: #f5f5f5;
     border-color: ${flavorColor};
     color: ${flavorColor};
   }
 `;
 const MailButtonLink = styled.a `
   text-decoration: none;
-  background-color: ${flavorColor};
+  
   cursor: pointer;
   display: block;
-  color: black;
   font-weight: bold;
   border-style: solid;
   border-radius: 50%;
@@ -312,23 +311,25 @@ const MailButtonLink = styled.a `
   top: ${props => props.scrolled ? '12px' : 'calc(35vh + 175px)'};
   @media(max-width: 813px) {
     top: ${props => props.scrolled ? 'auto' : 'calc(35vh + 230px)'};
-    bottom: ${props => props.scrolled ? '185px' : 'auto'};
+    bottom: ${props => props.scrolled ? '190px' : 'auto'};
   }
-  left: ${props => props.scrolled ? 'calc( 100vw - 440px)' : ' calc(310px + 5vw )'};
+  left: ${props => props.scrolled ? 'calc( 95vw - 400px)' : ' calc(310px + 5vw )'};
   @media(max-width: 813px) {
-    left: ${props => props.scrolled ? '50px' : ' calc(310px + 5vw )'};
+    left: ${props => props.scrolled ? 'calc(42.5px + 2vw )' : 'calc(310px + 5vw )'};
   }
-  margin-top: ${props => props.scrolled ? '0' : '21px'};
+  margin-top: ${props => props.scrolled ? '3px' : '21px'};
   z-index: ${props => props.scrolled ? '12' : '0'};
   padding: ${props => props.scrolled ? '0' : '4px 4px'};
   margin-left: -40px;
   width: 60px;
   height: auto;
-  border-color:  'transparent' ;
+  color: #f5f5f5;
+  background-color: ${props => props.scrolled ? `${flavorColor}` : `${flavorColor}`};
+  border-color:  ${flavorColor} ;
   &:hover {
-    background-color: transparent;
+    background-color: ${props => props.scrolled ? '#0b0c10' : '#f5f5f5'};
     border-color: ${flavorColor};
-    color: ${flavorColor};
+    color: ${props => props.scrolled ?  `${flavorColor}` : `${flavorColor}`};
   }
 `;
 
@@ -352,15 +353,15 @@ const Icon = styled.a `
   margin: 10px 0;
   border-radius: 50%;
   line-height: 4px;
-  color: black;
+  color: #f5f5f5;
   transition-duration: 0.6s;
   -webkit-transition-duration: 0.6s;
   z-index: 2;
-  background: white;
+  background: #0b0c10;
   
   &:hover {
-    color: white;
-    background: black;
+    color: #0b0c10;
+    background: #f5f5f5;
   }
 `;
 export default Title;

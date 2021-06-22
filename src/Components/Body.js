@@ -30,7 +30,7 @@ export class Body extends React.Component{
 const Base = styled.div`
     position: relative;
     top: 100vh;
-    background: white;
+    background: #0b0c10;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -47,13 +47,14 @@ const Core = styled.div`
 
 const Wave = styled.img `
   position: absolute;
-  width: 100%;
-  left: 0;
-  top: -60vw;
+  transform: scaleX(-1);
+  width: 100vw;
+  left: -16.5px;
+  top: -22vw;
   z-index: 0;
   height: auto;
   pointer-events: none;
-
+  
 `;
 
 export default Body;
