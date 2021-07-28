@@ -20,9 +20,10 @@ export class Body extends React.Component{
             {/*<Wave src={wave}></Wave>*/}
             <Core>
               <Projects/>
-              <Skills/>
-              <Background/>
-              <Copyright>©Copyright 2020, Gregory A. Blood</Copyright>
+              <Green>
+                <Skills/>
+                <Background/>
+              </Green>
             </Core>
           </Base>
         </React.Fragment>
@@ -31,13 +32,13 @@ export class Body extends React.Component{
 }
 const Base = styled.div`
     position: relative;
-    top: 100vh;
+    top: 98vh;
+    border-top-left-radius: 36px;
+    border-top-right-radius: 36px;
     background: ${notWhite};
     width: 100%;
     padding: 0;
     margin: 0;
-    padding-bottom: 50vh;
-    overflow-x: visible;
 `;
 
 const Core = styled.div`
@@ -57,7 +58,11 @@ const Wave = styled.img `
   height: auto;
   pointer-events: none;
 `;
-
+const Green = styled.div `
+  background-color: ${flavorColor};
+  display: block;
+  border-top-left-radius: 100px;
+`;
 const Copyright = styled.div `
   margin-top: 8rem;
 `;

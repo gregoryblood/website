@@ -139,15 +139,20 @@ const NavBar = styled.div `
   width: 100%;
   z-index: 10;
   height: 90px;
+  top: 0;
 `;
 const NavBarItems = styled.div `
-
   background: rgb(34, 38, 41, 0.9);
   margin: 0 auto;
   width: 95vw;
   height: 95px;
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
+  @media(max-width: 813px) {
+    width: 100%;
+    display: block;
+    
+  }
 `;
 
 const Name = styled(Link) `
@@ -171,14 +176,14 @@ const Name = styled(Link) `
 `;
 
 const NavLinks = styled.div `
-  
   position: fixed;
   top: 20px;
   right: 5vw;
   @media(max-width: 813px) {
-    width: 100%;
-    right: 0;
+    left: 0;
     top: 20px;
+    padding: 0;
+    margin: 0;
   }
   
 `;
@@ -248,9 +253,9 @@ const Headline = styled.div `
   @keyframes slide {
       100% { left: 0; }
   }
-  font-size: 64px;
+  font-size: 3rem;
   @media(max-width: 813px) {
-    font-size: 48px;
+    font-size: 3rem;
   }
 `;
 const Greeting = styled.div `
@@ -318,9 +323,9 @@ const MailButtonLink = styled.a `
   border-style: solid;
   border-radius: 50%;
   border-color: transparent;
-  transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  font-size:  28px;
+  transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  font-size:  2rem;
   position: ${props => props.scrolled ? 'fixed' : 'fixed'};
   top: ${props => props.scrolled ? '12px' : 'calc(35vh + 175px)'};
   left: ${props => props.scrolled ? 'calc( 95vw - 375px)' : ' calc(310px + 5vw )'};

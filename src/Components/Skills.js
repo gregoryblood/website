@@ -10,13 +10,13 @@ export class Skills extends React.Component{
       this.state = {
 
       };
-
     }
 
     render() {
       return (
         <Section id="skills">
           <Text>
+            <Header>Tools</Header>
             <Language>
               Javascript - C/C++/C# - Python - Java  
             </Language>
@@ -43,16 +43,20 @@ export class Skills extends React.Component{
     background-color: ${flavorColor};
     border-top-left-radius: 100px;
     margin-top: 5rem;
-    width: 100vw;
-    padding-bottom: 1000px;
+    width: 100%;
+    overflow-x: hidden;
+    padding-bottom: 2rem;
   `;
   const Text = styled.div `
     color: black;
-    width: 75vw;
     padding: 4rem;
-    padding-bottom: 0;
+  `;
+  const Header = styled.div `
+    text-align: center;
+    font-size: 1.3rem;
   `;
   const Language = styled.div `
+    padding-top: 1rem;
     font-weight: bold;
     font-size: 1.7rem;
   `;

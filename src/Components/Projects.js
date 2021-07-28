@@ -54,7 +54,6 @@ export class Projects extends React.Component {
     const scroll = this.state.scoll;
     return (
       <React.Fragment>
-        <br/>
         <CardArea id="work"  >
           <Card to={`/capstone`}  show={scroll} >
               <Img src={ osu }/>
@@ -84,7 +83,7 @@ export class Projects extends React.Component {
             </CardWords>
           </Card>
         </CardArea>
-        <Games>Games</Games> 
+        <Games>Try some of the games I made while your here!</Games> 
         <CardArea>
           <Card to={`/kings-gambit`} show={scroll} >
             <Img src={ kg1 }/>
@@ -105,15 +104,17 @@ export class Projects extends React.Component {
             </CardWords>
             
           </Card>
-          <Card to={`/ships`} show={scroll} >
-            <Img src={ships}/>
-            <CardWords>
-              <CardTitle>Ships!</CardTitle>
-              <CardFlavor>
-              A Party Game for Pirates
-              </CardFlavor>
-            </CardWords>
-          </Card>
+          {/*
+            <Card to={`/ships`} show={scroll} >
+              <Img src={ships}/>
+              <CardWords>
+                <CardTitle>Ships!</CardTitle>
+                <CardFlavor>
+                A Party Game for Pirates
+                </CardFlavor>
+              </CardWords>
+            </Card>
+          */}
         </CardArea>
       </React.Fragment>
     );
@@ -143,12 +144,10 @@ const Card = styled(NavLink)`
   width: 400px;
   height: 300px;
   margin: 20px;
-  
   transition-duration: 1s;
   -webkit-transition-duration: 1s;
   border-radius: 16px;
   position: relative;
-  
   opacity: ${props => props.show ? 1 : 0}
 `;
 
@@ -159,17 +158,14 @@ const Img = styled.img `
   width: 100%;
   border-radius: 16px;
   margin-top: 0px;
-
   float: center;
-  transition-duration: 0.6s;
-  -webkit-transition-duration: 0.6s;
+  transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
   transition: transform 300ms ease-in-out;
   object-fit: cover;
   &:hover {
     transform: scale(1.1);
-
   }
-  
 `;
 const CardWords = styled.div `
   display: none;
@@ -201,10 +197,9 @@ const CardFlavor = styled.div `
   font-style: italic;
 `;
 const Games = styled.div `
-  font-size: 38px;
-  font-weight: bold;
+  font-size: 1.5rem;
   text-align: center;
-  margin: 100px 0;
+  margin: 100px 0 0 0;
   z-index: 1;
 
 `;

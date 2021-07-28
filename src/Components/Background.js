@@ -64,19 +64,24 @@ export class Skills extends React.Component{
   }
   const Section = styled.div `
     background-color: ${flavorColor2};
-    position: absolute;
     width: 95vw;
     left: -5vw;
     border-top-right-radius: 100px;
-    margin-top: -950px;
-    height: 950px;
+    @media(max-width: 813px) {
+      left: 0;
+      width: 100vw;
+    }
   `;
   const Text = styled.div `
     color: white;
     text-align: left;
-    margin-top: -4rem;
     padding: 8rem;
+    padding-top: 1rem;
     margin-left: 5vw;
+    @media(max-width: 813px) {
+      margin: 0;
+      padding: 2rem;
+    }
   `;
   const Header = styled.div `
     text-align: center;
@@ -85,6 +90,7 @@ export class Skills extends React.Component{
   `;
   const Title = styled.div `
     font-size: 2rem;
+    font-weight: bold;
   `;
   const Date = styled.div `
     font-size: 1.1rem;
