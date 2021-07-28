@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { AiOutlineGithub,  AiFillLinkedin} from 'react-icons/ai';
 import { FiMail} from 'react-icons/fi';
-import {flavorColor, flavorColor2} from './Colors';
+import {flavorColor, flavorColor2, backgroundColor, notWhite} from './Colors';
 import { Link } from "react-scroll";
 
 var i = 0;
@@ -17,7 +17,7 @@ export class Title extends React.Component {
   }
   
   componentDidMount() {
-    this.interval = setInterval(() => this.setState({ word: heys[i++] }), 500);
+    this.interval = setInterval(() => this.setState({ word: heys[i++] }), 1000);
     window.addEventListener('scroll', this.listenToScroll);
   }
   componentDidUpdate() {
@@ -53,38 +53,41 @@ export class Title extends React.Component {
   render() {   
 
     return (
-      <React.Fragment>
+      <TitleSegment>
         <div id="home"></div>
         <NavBar>
-          <Name activeClass="active"
-                  to="home"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={400}>
-          Gregory Blood</Name>
-          <NavLinks>
-            <NavLink  activeClass="active"
-                      to="work"
-                      spy={true}
-                      smooth={true}
-                      offset={-200}
-                      duration={400}>
-              Work
-            </NavLink>
-            <NavLink  activeClass="active"
-                      to="work"
-                      spy={true}
-                      smooth={true}
-                      offset={-200}
-                      duration={400}>
-              Skills
-            </NavLink>
-            <NavLinkButton target='_blank' href={'https://raw.githubusercontent.com/gregoryblood/gregoryblood.github.io/master/website/resume.pdf'}>
-              Resume 
-            </NavLinkButton>
-          </NavLinks>
+          <NavBarItems>
+            <Name activeClass="active"
+                    to="home"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={400}>
+            Gregory Blood</Name>
+            <NavLinks>
+              <NavLink  activeClass="active"
+                        to="work"
+                        spy={true}
+                        smooth={true}
+                        offset={-200}
+                        duration={400}>
+                Work
+              </NavLink>
+              <NavLink  activeClass="active"
+                        to="skills"
+                        spy={true}
+                        smooth={true}
+                        offset={-200}
+                        duration={400}>
+                Skills
+              </NavLink>
+              <NavLinkButton target='_blank' href={'https://raw.githubusercontent.com/gregoryblood/gregoryblood.github.io/master/website/resume.pdf'}>
+                Resume 
+              </NavLinkButton>
+            </NavLinks>
+          </NavBarItems>
         </NavBar>
+
         <Fade >
         <HomeBody >
             <Greeting>
@@ -121,22 +124,32 @@ export class Title extends React.Component {
             <AiFillLinkedin/>
           </Icon>
         </Icons>
-      </React.Fragment>
-      
+      </TitleSegment>
     );
   }
 }
+
+const TitleSegment = styled.div `
+  color: ${backgroundColor};
+`;
 const Fade = styled.div `
 `;
 const NavBar = styled.div `
   position: fixed;
-  background: rgb(11, 12, 16, 0.99);
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 90px;
   z-index: 10;
+  height: 90px;
 `;
+const NavBarItems = styled.div `
+
+  background: rgb(34, 38, 41, 0.9);
+  margin: 0 auto;
+  width: 95vw;
+  height: 95px;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+`;
+
 const Name = styled(Link) `
   text-decoration: none;
   cursor: pointer;
@@ -205,7 +218,7 @@ const NavLinkButton = styled.a`
   &:hover {
     color: ${flavorColor};
     border-color: ${flavorColor};
-    background: #0b0c10;
+    background: transparent;
   }
 `;
 const HomeBody = styled.div `
@@ -219,7 +232,7 @@ const HomeBody = styled.div `
   }
 `;
 const Headline = styled.div `
-  color: black;
+  color: white;
   font-weight: bold;
   text-align: left;
   padding: 0px 0;
@@ -252,7 +265,7 @@ const Flavor = styled.div `
   font-size: 36px;
   text-align: left;
   padding: 10px 0;
-  color: #535353;
+  color: #999999;
 `;
 const MailButton = styled(FiMail) `
   display: flex;
@@ -262,13 +275,14 @@ const MailButton = styled(FiMail) `
   padding: 15px;
   height: 30px;
   width: 30px;
+  line-height: 0px;
 `;
 const WorkButton = styled(Link) `
   text-decoration: none;
   background-color: ${flavorColor};
   cursor: pointer;
   display: block;
-  color: #f5f5f5;
+  color: black;
   font-weight: bold;
   border-style: solid;
   border-radius: 8px;
@@ -290,7 +304,7 @@ const WorkButton = styled(Link) `
   border-color: ${flavorColor};
   padding:  ${props => props.scrolled ? '0px 0px' : '15px 20px'};
   &:hover {
-    background-color: #f5f5f5;
+    background-color: transparent;
     border-color: ${flavorColor};
     color: ${flavorColor};
   }
@@ -309,25 +323,26 @@ const MailButtonLink = styled.a `
   font-size:  28px;
   position: ${props => props.scrolled ? 'fixed' : 'fixed'};
   top: ${props => props.scrolled ? '12px' : 'calc(35vh + 175px)'};
+  left: ${props => props.scrolled ? 'calc( 95vw - 375px)' : ' calc(310px + 5vw )'};
+
   @media(max-width: 813px) {
     top: ${props => props.scrolled ? 'auto' : 'calc(35vh + 230px)'};
     bottom: ${props => props.scrolled ? '190px' : 'auto'};
-  }
-  left: ${props => props.scrolled ? 'calc( 95vw - 400px)' : ' calc(310px + 5vw )'};
-  @media(max-width: 813px) {
     left: ${props => props.scrolled ? 'calc(42.5px + 2vw )' : 'calc(310px + 5vw )'};
+    transform: ${props => props.scrolled ? 'scale(1.05)': 'scale(1.0)'};
   }
+
   margin-top: ${props => props.scrolled ? '3px' : '21px'};
   z-index: ${props => props.scrolled ? '12' : '0'};
   padding: ${props => props.scrolled ? '0' : '4px 4px'};
   margin-left: -40px;
   width: 60px;
   height: auto;
-  color: #f5f5f5;
+  color: ${backgroundColor};
   background-color: ${props => props.scrolled ? `${flavorColor}` : `${flavorColor}`};
   border-color:  ${flavorColor} ;
   &:hover {
-    background-color: ${props => props.scrolled ? '#0b0c10' : '#f5f5f5'};
+    background-color: ${props => props.scrolled ? 'transparent' : 'transparent'};
     border-color: ${flavorColor};
     color: ${props => props.scrolled ?  `${flavorColor}` : `${flavorColor}`};
   }
@@ -357,11 +372,12 @@ const Icon = styled.a `
   transition-duration: 0.6s;
   -webkit-transition-duration: 0.6s;
   z-index: 2;
-  background: #0b0c10;
+  font-size: 3rem;
+  background: rgb(34, 38, 41, 0.9);
   
   &:hover {
-    color: #0b0c10;
-    background: #f5f5f5;
+    color: rgb(34, 38, 41, 0.9);
+    background: ${notWhite};
   }
 `;
 export default Title;

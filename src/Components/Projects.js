@@ -8,13 +8,14 @@ import ph1 from '../Images/ph1.jpg';
 import mm1 from '../Images/mm1.png';
 import osu from '../Images/osu.PNG';
 import { NavLink } from 'react-router-dom';
+import { flavorColor } from './Colors';
 
 var scroll = 0;
 export class Projects extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      scroll: 0 
+      scroll: false
     };
   }
   
@@ -34,24 +35,28 @@ export class Projects extends React.Component {
       document.documentElement.clientHeight
   
     const scrolled = winScroll / height;
-    if (scrolled > 0.1) {
-      if (scrolled > scroll) {
-        scroll = scrolled;
+    if (scrolled > 0.2) {
+      if (!this.state.scroll) {
         this.setState({
-          scoll: scrolled,
+          scoll: true
+        })
+      }
+    } else {
+      if (this.state.scroll) {
+        this.setState({
+          scoll: false
         })
       }
     }
+
   }
   render() {   
     const scroll = this.state.scoll;
     return (
       <React.Fragment>
         <br/>
-        
         <CardArea id="work"  >
-          <Card to={`/capstone`}  show={scroll > 0.12} >
-              
+          <Card to={`/capstone`}  show={scroll} >
               <Img src={ osu }/>
               <CardWords>
                 <CardTitle>Capstone</CardTitle>
@@ -60,7 +65,7 @@ export class Projects extends React.Component {
                 </CardFlavor>  
               </CardWords>
           </Card>
-          <Card to={`/purehoney`} show={scroll > 0.25}>
+          <Card to={`/purehoney`} show={scroll}>
             <Img src={ph1}/>
             <CardWords>
               <CardTitle>Pure Honey</CardTitle>
@@ -69,7 +74,7 @@ export class Projects extends React.Component {
               </CardFlavor>
             </CardWords>
           </Card>
-          <Card to={`/musicmajik`} show={scroll > 0.38} >
+          <Card to={`/musicmajik`} show={scroll} >
             <Img src={mm1}/>
             <CardWords>
               <CardTitle>Music Majik</CardTitle>
@@ -81,7 +86,7 @@ export class Projects extends React.Component {
         </CardArea>
         <Games>Games</Games> 
         <CardArea>
-          <Card to={`/kings-gambit`} show={scroll > 0.62} >
+          <Card to={`/kings-gambit`} show={scroll} >
             <Img src={ kg1 }/>
             <CardWords>
               <CardTitle>King's Gambit</CardTitle>
@@ -90,7 +95,7 @@ export class Projects extends React.Component {
               </CardFlavor>
             </CardWords>
           </Card>
-          <Card to={`/master-blaster`} show={scroll > 0.75}>
+          <Card to={`/master-blaster`} show={scroll}>
             <Img src={ mb3 }/>
             <CardWords>
               <CardTitle>Master Blaster</CardTitle>
@@ -100,7 +105,7 @@ export class Projects extends React.Component {
             </CardWords>
             
           </Card>
-          <Card to={`/ships`} show={scroll > 0.88} >
+          <Card to={`/ships`} show={scroll} >
             <Img src={ships}/>
             <CardWords>
               <CardTitle>Ships!</CardTitle>
@@ -118,52 +123,56 @@ export class Projects extends React.Component {
 export default Projects;
 
 const CardArea = styled.div`
+  background: ${flavorColor}
   display: flexbox;
   display:-webkit-flex;
   flex-wrap: wrap;
   text-align: center;
-  width: 100%;
-  max-width: 1200px;
+  max-width: 900px;
+  margin: 0 auto;
   align-items: center;
-  
-  @media(max-width: 768px) {
+  flex-direction: row;
+  @media(max-width: 880px) {
     justify-content: center;
   }
+  padding: 20px;
 `;
 const Card = styled(NavLink)`
   text-decoration: none;
-  display: flex;
-  width: 50vw;
-  margin-bottom: 0px;
-  height: 600px;
+  display: block;
+  width: 400px;
+  height: 300px;
+  margin: 20px;
+  
   transition-duration: 1s;
   -webkit-transition-duration: 1s;
   border-radius: 16px;
   position: relative;
-  width: 100%;  
+  
   opacity: ${props => props.show ? 1 : 0}
 `;
 
 const Img = styled.img `
   position: relative;
   z-index: 2;
-  height: 60%;
-  width: 60%;
+  height: 100%;
+  width: 100%;
   border-radius: 16px;
   margin-top: 0px;
 
   float: center;
   transition-duration: 0.6s;
   -webkit-transition-duration: 0.6s;
+  transition: transform 300ms ease-in-out;
   object-fit: cover;
   &:hover {
-    opacity: 0.35;
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
+    transform: scale(1.1);
+
   }
   
 `;
 const CardWords = styled.div `
+  display: none;
   position: absolute;
   top: 200px;
   z-index: 2;
