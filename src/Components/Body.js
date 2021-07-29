@@ -32,7 +32,7 @@ export class Body extends React.Component{
 }
 const Base = styled.div`
     position: relative;
-    top: 98vh;
+    top: 100vh;
     border-top-left-radius: 36px;
     border-top-right-radius: 36px;
     background: ${notWhite};
@@ -44,7 +44,7 @@ const Base = styled.div`
 const Core = styled.div`
     margin: 0 auto;
     position: relative;
-    top: 150px;
+    top: 4rem;
     padding: 0;
 `;
 

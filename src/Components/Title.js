@@ -93,10 +93,10 @@ export class Title extends React.Component {
               {this.state.word} 
             </Greeting>
             <Headline>
-              Do you need work done right?
+              Let's build something together.
             </Headline>
             <Flavor>
-              I design, build, and deliver. 
+              Your dream developed.
             </Flavor>
           </HomeBody>
           <WorkButton activeClass="active"
@@ -144,7 +144,6 @@ const NavBar = styled.div `
   @media(max-width: 813px) {
     top: auto;
     bottom: 0;
-    border-bottom-style: solid;
     border-top-style: none;
     border-bottom-style
   }
@@ -243,7 +242,7 @@ const NavLinkButton = styled.a`
   @media(max-width: 813px) {
     margin-left: 2rem;
     position: fixed;
-    right: 1rem;
+    right: 0.5rem;
     bottom: 1rem;
   }
 `;
@@ -292,6 +291,9 @@ const Flavor = styled.div `
   text-align: left;
   padding: 10px 0;
   color: #999999;
+  @media(max-width: 813px) {
+    font-size: 1.5rem;
+  }
 `;
 const MailButton = styled.div `
   text-decoration: none;
@@ -334,21 +336,22 @@ const WorkButton = styled(Link) `
   -webkit-transition-duration: 0.4s;
   font-size:  32px;
   position: fixed;
-  top: ${props => props.scrolled ? '12px' : 'calc(35vh + 175px)'};
-
-  left: ${props => props.scrolled ? 'calc( 100vw - 475px)' : ' 5vw'};
-  margin-top: ${props => props.scrolled ? '0rem' : '0.75rem'};
-
-  z-index: ${props => props.scrolled ? '12' : '0'};
-  width: ${props => props.scrolled ? '60px' : '200px'};
-  height: ${props => props.scrolled ? 'auto' : 'auto'};
-  border-radius:  ${props => props.scrolled ? '50%' : '8px'};
+  top: calc(35vh + 175px);
+  left: 5vw;
+  margin-top: 0.75rem;
+  z-index: 0;
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
   border-color: ${flavorColor};
-  padding:  ${props => props.scrolled ? '0px 0px' : '15px 20px'};
+  padding: 15px 20px;
   &:hover {
     background-color: transparent;
     border-color: ${flavorColor};
     color: ${flavorColor};
+  }
+  @media(max-width: 813px) {
+    top: calc(35vh + 120px);
   }
 `;
 const MailButtonLink = styled.a `
@@ -367,6 +370,7 @@ const MailButtonLink = styled.a `
   color: ${backgroundColor};
   
   @media(max-width: 813px) {
+    z-index: 10;
     margin-left: -2.5rem;
     top: auto;
     bottom: 0.85rem;

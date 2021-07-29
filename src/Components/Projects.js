@@ -35,7 +35,7 @@ export class Projects extends React.Component {
       document.documentElement.clientHeight
   
     const scrolled = winScroll / height;
-    if (scrolled > 0.2) {
+    if (scrolled > 0.1) {
       if (!this.state.scroll) {
         this.setState({
           scoll: true
@@ -54,7 +54,9 @@ export class Projects extends React.Component {
     const scroll = this.state.scoll;
     return (
       <React.Fragment>
+        <Games>Check out what I've worked on!</Games> 
         <CardArea id="work"  >
+          
           <Card to={`/capstone`}  show={scroll} >
               <Img src={ osu }/>
               <CardWords>
@@ -136,7 +138,7 @@ const CardArea = styled.div`
   @media(max-width: 880px) {
     justify-content: center;
   }
-  padding: 20px;
+  padding: 0 20px 20px 20px;
 `;
 const Card = styled(NavLink)`
   text-decoration: none;
