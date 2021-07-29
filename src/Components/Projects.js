@@ -10,7 +10,6 @@ import osu from '../Images/osu.PNG';
 import { NavLink } from 'react-router-dom';
 import { flavorColor } from './Colors';
 
-var scroll = 0;
 export class Projects extends React.Component {
   constructor(props) {
     super(props);
@@ -35,23 +34,24 @@ export class Projects extends React.Component {
       document.documentElement.clientHeight
   
     const scrolled = winScroll / height;
+    console.log(scrolled);
     if (scrolled > 0.1) {
       if (!this.state.scroll) {
         this.setState({
-          scoll: true
+          scroll: true
         })
       }
     } else {
       if (this.state.scroll) {
         this.setState({
-          scoll: false
+          scroll: false
         })
       }
     }
 
   }
   render() {   
-    const scroll = this.state.scoll;
+    const scroll = this.state.scroll;
     return (
       <React.Fragment>
         <Games>Check out what I've built!</Games> 
@@ -123,11 +123,8 @@ export class Projects extends React.Component {
   }
 }
 
-export default Projects;
-
 const CardArea = styled.div`
-  background: ${flavorColor}
-  display: flexbox;
+  display: flex;
   display:-webkit-flex;
   flex-wrap: wrap;
   text-align: center;
@@ -142,7 +139,6 @@ const CardArea = styled.div`
     width: 100vw;
     padding: 0;
   }
-  
 `;
 const Card = styled(NavLink)`
   text-decoration: none;
@@ -156,7 +152,7 @@ const Card = styled(NavLink)`
   -webkit-transition-duration: 1s;
   border-radius: 16px;
   position: relative;
-  opacity: ${props => props.show ? 1 : 0}
+  opacity: ${props => props.show ? 1 : 0};
   @media(max-width: 880px) {
     width: 95vw;
   }
@@ -215,3 +211,5 @@ const Games = styled.div `
   z-index: 1;
 
 `;
+
+export default Projects;

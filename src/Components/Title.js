@@ -147,7 +147,7 @@ const NavBar = styled.div `
     top: auto;
     bottom: 0;
     border-top-style: none;
-    border-bottom-style
+    border-bottom-style: none;
   }
 `;
 const NavBarItems = styled.div `

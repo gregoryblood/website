@@ -10,6 +10,10 @@ export const Core = styled.div `
     background: white;
     overflow: visible;
     width: 100%;
+    @media(max-width: 880px) {
+        padding: 0.1rem 1rem 10rem 1rem;
+        top: 9rem;
+    }
 `;
 export  const Body = styled.div `
     padding: 1rem 1rem 10rem 1rem;
@@ -17,7 +21,7 @@ export  const Body = styled.div `
     max-width: 900px;
     text-align: left;
     @media(max-width: 880px) {
-        padding: 0rem 1rem 10rem 1rem;
+        padding: 0.1rem 1rem 10rem 1rem;
     }
 `;
 export const TitleBar = styled.div `
@@ -74,7 +78,7 @@ export const Portal = styled.iframe `
 export const Img = styled.img `
     margin: 30px auto 30px auto;
     display: block;
-    width: 90%;
+    width: 95%;
     max-width: 800px;
     border-style: solid;
     border-color: black;
@@ -91,7 +95,9 @@ export const ImgLong = styled.img `
     border-color: black;
     border-width: 2px;
     border-radius: 8px;
-    
+    @media(max-width: 768px) {
+        width: 80%;
+    }
 `;
 export const Tools = styled.div`
     margin: 10px 0; 
