@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react'
 import { AiOutlineGithub,  AiFillLinkedin} from 'react-icons/ai';
-import { FiMail} from 'react-icons/fi';
+import { FiChevronsDown, FiMail} from 'react-icons/fi';
 import {flavorColor, flavorColor2, backgroundColor, notWhite, darkGray} from './Colors';
 import { Link } from "react-scroll";
 
@@ -39,7 +40,7 @@ export class Title extends React.Component {
   
     const scrolled = winScroll / height
   
-    if (scrolled > 0.05) {
+    if (scrolled > 0.04) {
       this.setState({
         scrolled: true,
       })
@@ -121,6 +122,7 @@ export class Title extends React.Component {
             <AiFillLinkedin/>
           </Icon>
         </Icons>
+        <DownArrow><FiChevronsDown/></DownArrow>
       </TitleSegment>
     );
   }
@@ -253,7 +255,7 @@ const HomeBody = styled.div `
   padding: 10px 5vw;
   color: #979fab;
   @media(max-width: 813px) {
-    top: 20vh;
+    top: 10vh;
   }
 `;
 const Headline = styled.div `
@@ -351,7 +353,7 @@ const WorkButton = styled(Link) `
     color: ${flavorColor};
   }
   @media(max-width: 813px) {
-    top: calc(35vh + 120px);
+    top: calc(20vh + 120px);
   }
 `;
 const MailButtonLink = styled.a `
@@ -360,17 +362,16 @@ const MailButtonLink = styled.a `
   display: block;
   transition-duration: 0.3s;
   -webkit-transition-duration: 0.3s;
-  position: ${props => props.scrolled ? 'fixed' : 'fixed'};
-  top: ${props => props.scrolled ? '12px' : 'calc(35vh + 175px)'};
+  position: fixed;
+  top: ${props => props.scrolled ? '0.8rem' : 'calc(35vh + 175px)'};
   left: ${props => props.scrolled ? 'calc( 95vw - 375px)' : ' calc(310px + 5vw )'};
-  margin-top: ${props => props.scrolled ? '3px' : '21px'};
-  z-index: ${props => props.scrolled ? '12' : '0'};
+  margin-top: ${props => props.scrolled ? '0rem' : '1.2rem'};
+  z-index: 10;
   margin-left: ${props => props.scrolled ? '-1rem' : '-2rem'};
 
   color: ${backgroundColor};
   
   @media(max-width: 813px) {
-    z-index: 10;
     margin-left: -2.5rem;
     top: auto;
     bottom: 0.85rem;
@@ -413,6 +414,37 @@ const Icon = styled.a `
     font-size: 2rem;
     display: inline-block;
     margin: 0 0.2rem;
+  }
+`;
+
+const bounce = keyframes`
+  from, 20%, 53%, 80%, to {
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+`;
+const DownArrow = styled.div `
+  position: fixed;
+  bottom: 0.5rem;
+  left: 50%;
+  width: 4rem;
+  margin-left: -2rem;
+  animation: ${bounce} 2s ease infinite;
+  color: white;
+  font-size: 3rem;
+  @media(max-width: 813px) {
+    bottom: 4rem;
   }
 `;
 export default Title;

@@ -5,13 +5,14 @@
   "homepage": "https://www.gregoryblood.me/portfolio/",
   "dependencies": {
     "@emotion/core": "^10.0.28",
+    "@emotion/react": "^11.4.0",
     "@emotion/styled": "^10.0.27",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^1.1.5",
+    "react-scripts": "^4.0.3",
     "react-scroll": "^1.8.2",
     "web-vitals": "^2.1.0"
   },
