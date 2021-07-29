@@ -9,9 +9,9 @@ export const Core = styled.div `
     border-top-right-radius: 8px;
     background: white;
     overflow: visible;
-    width: 100%;
+    width: 100vw;
     @media(max-width: 880px) {
-        padding: 0.1rem 1rem 10rem 1rem;
+        padding: 0.1rem 0rem 10rem 0rem;
         top: 9rem;
     }
 `;
@@ -21,7 +21,7 @@ export  const Body = styled.div `
     max-width: 900px;
     text-align: left;
     @media(max-width: 880px) {
-        padding: 0.1rem 1rem 10rem 1rem;
+        padding: 0.1rem 0.5rem 10rem 0.5rem;
     }
 `;
 export const TitleBar = styled.div `
