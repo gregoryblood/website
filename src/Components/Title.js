@@ -226,7 +226,7 @@ const NavLinkButton = styled.a`
   display: inline-block;
   font-size: 1.5rem;
   font-weight: bold;
-  margin-left: 0.1rem;
+  margin-left: 1rem;
   padding: 0.4rem 0.8rem;
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
@@ -277,7 +277,7 @@ const Headline = styled.div `
   }
   font-size: 3rem;
   @media(max-width: 813px) {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 `;
 const Greeting = styled.div `
@@ -353,7 +353,8 @@ const WorkButton = styled(Link) `
     color: ${flavorColor};
   }
   @media(max-width: 813px) {
-    top: calc(20vh + 120px);
+    top: auto;
+    bottom: 7rem;
   }
 `;
 const MailButtonLink = styled.a `
@@ -367,7 +368,7 @@ const MailButtonLink = styled.a `
   left: ${props => props.scrolled ? 'calc( 95vw - 375px)' : ' calc(310px + 5vw )'};
   margin-top: ${props => props.scrolled ? '0rem' : '1.2rem'};
   z-index: 10;
-  margin-left: ${props => props.scrolled ? '-1rem' : '-2rem'};
+  margin-left: ${props => props.scrolled ? '-2rem' : '-2rem'};
 
   color: ${backgroundColor};
   
@@ -423,15 +424,15 @@ const bounce = keyframes`
   }
 
   40%, 43% {
-    transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -2rem, 0);
   }
 
   70% {
-    transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -1rem, 0);
   }
 
   90% {
-    transform: translate3d(0,-4px,0);
+    transform: translate3d(0,-0.4rem,0);
   }
 `;
 const DownArrow = styled.div `
@@ -440,11 +441,13 @@ const DownArrow = styled.div `
   left: 50%;
   width: 4rem;
   margin-left: -2rem;
-  animation: ${bounce} 2s ease infinite;
+  animation: ${bounce} 1.5s ease infinite;
   color: white;
   font-size: 3rem;
   @media(max-width: 813px) {
-    bottom: 4rem;
+    bottom: 7rem;
+    right: -0.2rem;
+    left: auto;
   }
 `;
 export default Title;

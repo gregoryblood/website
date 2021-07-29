@@ -2,9 +2,9 @@ import styled from '@emotion/styled'
 import { backgroundColor, flavorColor, flavorColor2 } from '../Components/Colors';
 
 export const Core = styled.div `
-    top: 100px;
+    top: 8rem;
     position: relative;
-    margin: 40px auto 0 auto;
+    margin: auto;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     background: white;
@@ -12,11 +12,13 @@ export const Core = styled.div `
     width: 100%;
 `;
 export  const Body = styled.div `
-    padding: 20px 20px 200px 20px;
+    padding: 1rem 1rem 10rem 1rem;
     margin: 0 auto;
     max-width: 900px;
     text-align: left;
-
+    @media(max-width: 880px) {
+        padding: 0rem 1rem 10rem 1rem;
+    }
 `;
 export const TitleBar = styled.div `
     width: 100%;
@@ -28,8 +30,8 @@ export const TitleBar = styled.div `
     
 `;
 export const PTitle = styled.div `
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: 2.5rem;
+    font-weight: bold;
     color: white;
     padding: 20px 20px 0 20px;
     @media(max-width: 768px) {
@@ -44,11 +46,11 @@ export const Header = styled.div `
     margin: 25px 0 10px 0;
 `;
 export const Text = styled.div `
-    font-size: 24px;
+    font-size: 1.5rem;
 `;
 export const Flavor = styled.div `
     padding: 0px 0 10px 0;
-    font-size: 2rem;
+    font-size: 1rem;
     font-style: italic;
     color: white;
     padding: 0px 20px 20px 20px;
@@ -95,13 +97,15 @@ export const Tools = styled.div`
     margin: 10px 0; 
     font-style: italic;
     color: #525252;
-    font-size: 1.5rem;
+    font-size: 1rem;
 `;
 export const Buttons = styled.ul `
   list-style-type: none;
   margin: 40px 0 0 0;
   overflow: visible;
   text-align: center;
+  margin: 0;
+  padding: 0;
 `;
 export const HotButton = styled.button `
     font-size: 1.5rem;
@@ -109,14 +113,13 @@ export const HotButton = styled.button `
     border-style: solid;
     border-color: white;
     border-width: 4px;
-    border-radius: 8px;
+    border-radius: 10px;
     display: inline-block;
-    padding: 30px 50px;
     color: white;
     background-color: #1c1c1c;
-    width: 200px;
-    margin: 20px 40px 0 0px;
-    outline:none;
+    width: 100%;
+    height: 5rem;
+    margin: 0.5rem 0;
     transition-duration: 0.4s;
     -webkit-transition-duration: 0.4s;
     font-family: nunito;

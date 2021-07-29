@@ -19,7 +19,7 @@ export class Skills extends React.Component{
           <Section>
             <Text>
               <Header>
-                Work
+                Work Experience
               </Header>
               <Title>
                 Teacher Assistant 

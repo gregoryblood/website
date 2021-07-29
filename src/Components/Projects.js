@@ -54,7 +54,7 @@ export class Projects extends React.Component {
     const scroll = this.state.scoll;
     return (
       <React.Fragment>
-        <Games>Check out what I've worked on!</Games> 
+        <Games>Check out what I've built!</Games> 
         <CardArea id="work"  >
           
           <Card to={`/capstone`}  show={scroll} >
@@ -131,28 +131,35 @@ const CardArea = styled.div`
   display:-webkit-flex;
   flex-wrap: wrap;
   text-align: center;
+
   max-width: 900px;
   margin: 0 auto;
   align-items: center;
   flex-direction: row;
+  padding: 0 20px 20px 20px;
   @media(max-width: 880px) {
     justify-content: center;
+    width: 100vw;
+    padding: 0;
   }
-  padding: 0 20px 20px 20px;
+  
 `;
 const Card = styled(NavLink)`
   text-decoration: none;
   display: block;
   width: 90vw;
-  height: 50vw;
+  height: 60vw;
   max-width: 400px;
   max-height: 300px;
-  margin: 20px;
+  margin: 1rem;
   transition-duration: 1s;
   -webkit-transition-duration: 1s;
   border-radius: 16px;
   position: relative;
   opacity: ${props => props.show ? 1 : 0}
+  @media(max-width: 880px) {
+    width: 95vw;
+  }
 `;
 
 const Img = styled.img `
@@ -169,32 +176,33 @@ const Img = styled.img `
   object-fit: cover;
   &:hover {
     transform: scale(1.1);
+
   }
 `;
 const CardWords = styled.div `
   display: none;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 200px;
-  z-index: 2;
-  right: 30px;
-  height: 100px;
-  width: 300px;
-  background: #0b0c10;
-  padding: 20px;
-  box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.37 );
-  backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  top: 0;
+  z-index: 5;
+  pointer-events:none;
+  background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
+  &:hover {
+    color: black;
+  }
 `;
 const CardTitle = styled.div `
-  text-align: right;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   font-size: 36px;
   font-weight: 800;
   color: white;
 `;
 
 const CardFlavor = styled.div `
+  display: none;
   font-size: 24px;
   text-align: right;
   color: gray;
