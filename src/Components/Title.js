@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { AiOutlineGithub,  AiFillLinkedin} from 'react-icons/ai';
 import { FiMail} from 'react-icons/fi';
-import {flavorColor, flavorColor2, backgroundColor, notWhite} from './Colors';
+import {flavorColor, flavorColor2, backgroundColor, notWhite, darkGray} from './Colors';
 import { Link } from "react-scroll";
 
 var i = 0;
@@ -87,7 +87,6 @@ export class Title extends React.Component {
             </NavLinks>
           </NavBarItems>
         </NavBar>
-
         <Fade >
         <HomeBody >
             <Greeting>
@@ -99,8 +98,6 @@ export class Title extends React.Component {
             <Flavor>
               I design, build, and deliver. 
             </Flavor>
-            
-            
           </HomeBody>
           <WorkButton activeClass="active"
                       to="work"
@@ -111,9 +108,9 @@ export class Title extends React.Component {
           See my Work
           </WorkButton>
           {this.state.scrolled ? 
-          <MailButtonLink scrolled href={`mailto: gregoryblood1998@gmail.com?`}><MailButton/></MailButtonLink>
+          <MailButtonLink scrolled href={`mailto: gregoryblood1998@gmail.com?`}><MailButton><FiMail/></MailButton></MailButtonLink>
           :
-          <MailButtonLink href={`mailto: gregoryblood1998@gmail.com?`}><MailButton/></MailButtonLink>
+          <MailButtonLink href={`mailto: gregoryblood1998@gmail.com?`}><MailButton><FiMail/></MailButton></MailButtonLink>
           }
       </Fade>
         <Icons>
@@ -138,20 +135,34 @@ const NavBar = styled.div `
   position: fixed;
   width: 100%;
   z-index: 10;
-  height: 90px;
+
+  height: 5rem;
   top: 0;
+  border-color: ${flavorColor};
+  border-top-style: solid;
+  border-width: 0.3rem;
+  @media(max-width: 813px) {
+    top: auto;
+    bottom: 0;
+    border-bottom-style: solid;
+    border-top-style: none;
+    border-bottom-style
+  }
 `;
 const NavBarItems = styled.div `
   background: rgb(34, 38, 41, 0.9);
   margin: 0 auto;
   width: 95vw;
-  height: 95px;
+  height: 100%;
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
   @media(max-width: 813px) {
     width: 100%;
     display: block;
-    
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
   }
 `;
 
@@ -181,7 +192,8 @@ const NavLinks = styled.div `
   right: 5vw;
   @media(max-width: 813px) {
     left: 0;
-    top: 20px;
+    top: auto;
+    bottom: 1rem;
     padding: 0;
     margin: 0;
   }
@@ -202,16 +214,19 @@ const NavLink = styled(Link)`
   &:hover {
     color: ${flavorColor};
   }
+  @media(max-width: 813px) {
+    display: none;
+  }
 `;
 
 const NavLinkButton = styled.a`
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
-  font-size: 22px;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-left: 15px;
-  padding: 10px 20px;
+  margin-left: 0.1rem;
+  padding: 0.4rem 0.8rem;
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
   background: ${flavorColor};
@@ -224,6 +239,12 @@ const NavLinkButton = styled.a`
     color: ${flavorColor};
     border-color: ${flavorColor};
     background: transparent;
+  }
+  @media(max-width: 813px) {
+    margin-left: 2rem;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
   }
 `;
 const HomeBody = styled.div `
@@ -255,7 +276,7 @@ const Headline = styled.div `
   }
   font-size: 3rem;
   @media(max-width: 813px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 `;
 const Greeting = styled.div `
@@ -272,15 +293,32 @@ const Flavor = styled.div `
   padding: 10px 0;
   color: #999999;
 `;
-const MailButton = styled(FiMail) `
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  height: 30px;
-  width: 30px;
-  line-height: 0px;
+const MailButton = styled.div `
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  padding: 0.7rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  border-width: 0.25rem;
+  border-style: solid;
+  border-color: transparent;
+  line-height: 1rem;
+  color: black;
+  transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s;
+  z-index: 2;
+  background: ${flavorColor};
+
+  &:hover {
+    color: ${flavorColor};
+    background: transparent;
+    border-color: ${flavorColor}
+  }
+  @media(max-width: 813px) {
+    padding: 0.5rem;
+    font-size: 1.75rem;
+  }
 `;
 const WorkButton = styled(Link) `
   text-decoration: none;
@@ -295,13 +333,12 @@ const WorkButton = styled(Link) `
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
   font-size:  32px;
-  position: ${props => props.scrolled ? 'fixed' : 'fixed'};
+  position: fixed;
   top: ${props => props.scrolled ? '12px' : 'calc(35vh + 175px)'};
-  @media(max-width: 813px) {
-    top: ${props => props.scrolled ? '12px' : 'calc(35vh + 230px)'};
-  }
+
   left: ${props => props.scrolled ? 'calc( 100vw - 475px)' : ' 5vw'};
-  margin-top: ${props => props.scrolled ? '0' : '20px'};
+  margin-top: ${props => props.scrolled ? '0rem' : '0.75rem'};
+
   z-index: ${props => props.scrolled ? '12' : '0'};
   width: ${props => props.scrolled ? '60px' : '200px'};
   height: ${props => props.scrolled ? 'auto' : 'auto'};
@@ -316,40 +353,24 @@ const WorkButton = styled(Link) `
 `;
 const MailButtonLink = styled.a `
   text-decoration: none;
-  
   cursor: pointer;
   display: block;
-  font-weight: bold;
-  border-style: solid;
-  border-radius: 50%;
-  border-color: transparent;
   transition-duration: 0.3s;
   -webkit-transition-duration: 0.3s;
-  font-size:  2rem;
   position: ${props => props.scrolled ? 'fixed' : 'fixed'};
   top: ${props => props.scrolled ? '12px' : 'calc(35vh + 175px)'};
   left: ${props => props.scrolled ? 'calc( 95vw - 375px)' : ' calc(310px + 5vw )'};
-
-  @media(max-width: 813px) {
-    top: ${props => props.scrolled ? 'auto' : 'calc(35vh + 230px)'};
-    bottom: ${props => props.scrolled ? '190px' : 'auto'};
-    left: ${props => props.scrolled ? 'calc(42.5px + 2vw )' : 'calc(310px + 5vw )'};
-    transform: ${props => props.scrolled ? 'scale(1.05)': 'scale(1.0)'};
-  }
-
   margin-top: ${props => props.scrolled ? '3px' : '21px'};
   z-index: ${props => props.scrolled ? '12' : '0'};
-  padding: ${props => props.scrolled ? '0' : '4px 4px'};
-  margin-left: -40px;
-  width: 60px;
-  height: auto;
+  margin-left: ${props => props.scrolled ? '-1rem' : '-2rem'};
+
   color: ${backgroundColor};
-  background-color: ${props => props.scrolled ? `${flavorColor}` : `${flavorColor}`};
-  border-color:  ${flavorColor} ;
-  &:hover {
-    background-color: ${props => props.scrolled ? 'transparent' : 'transparent'};
-    border-color: ${flavorColor};
-    color: ${props => props.scrolled ?  `${flavorColor}` : `${flavorColor}`};
+  
+  @media(max-width: 813px) {
+    margin-left: -2.5rem;
+    top: auto;
+    bottom: 0.85rem;
+    left: 10.5rem;
   }
 `;
 
@@ -363,6 +384,7 @@ const Icons = styled.div `
   @media(max-width: 813px) {
     right: auto;
     left: 2vw;
+    bottom: 0.3rem;
   }
 `;
 const Icon = styled.a `
@@ -370,7 +392,7 @@ const Icon = styled.a `
   display: block;
   cursor: pointer;
   padding: 10px 10px;
-  margin: 10px 0;
+  margin: 0.6rem 0;
   border-radius: 50%;
   line-height: 4px;
   color: #f5f5f5;
@@ -379,10 +401,14 @@ const Icon = styled.a `
   z-index: 2;
   font-size: 3rem;
   background: rgb(34, 38, 41, 0.9);
-  
   &:hover {
     color: rgb(34, 38, 41, 0.9);
     background: ${notWhite};
+  }
+  @media(max-width: 813px) {
+    font-size: 2rem;
+    display: inline-block;
+    margin: 0 0.2rem;
   }
 `;
 export default Title;

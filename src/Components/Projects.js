@@ -83,7 +83,7 @@ export class Projects extends React.Component {
             </CardWords>
           </Card>
         </CardArea>
-        <Games>Try some of the games I made while your here!</Games> 
+        <Games>Try some of the games I made while you're here!</Games> 
         <CardArea>
           <Card to={`/kings-gambit`} show={scroll} >
             <Img src={ kg1 }/>
@@ -141,8 +141,10 @@ const CardArea = styled.div`
 const Card = styled(NavLink)`
   text-decoration: none;
   display: block;
-  width: 400px;
-  height: 300px;
+  width: 90vw;
+  height: 50vw;
+  max-width: 400px;
+  max-height: 300px;
   margin: 20px;
   transition-duration: 1s;
   -webkit-transition-duration: 1s;

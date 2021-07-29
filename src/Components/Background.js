@@ -71,6 +71,7 @@ export class Skills extends React.Component{
       left: 0;
       width: 100vw;
     }
+    padding-bottom: 10rem;
   `;
   const Text = styled.div `
     color: white;
