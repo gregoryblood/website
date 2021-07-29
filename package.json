@@ -2,7 +2,7 @@
   "name": "gregoryblood",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.gregoryblood.me/portfolio/",
+  "homepage": "https://www.gregoryblood.me/",
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/react": "^11.4.0",

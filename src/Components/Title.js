@@ -82,7 +82,7 @@ export class Title extends React.Component {
                         duration={400}>
                 Skills
               </NavLink>
-              <NavLinkButton target='_blank' href={'https://raw.githubusercontent.com/gregoryblood/gregoryblood.github.io/master/website/resume.pdf'}>
+              <NavLinkButton target='_blank' href={'https://raw.githubusercontent.com/gregoryblood/gregoryblood.github.io/master/resume.pdf'}>
                 Resume 
               </NavLinkButton>
             </NavLinks>

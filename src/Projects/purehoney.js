@@ -20,8 +20,8 @@ export class PureHoney extends React.Component {
           <Body>
           <Img src={ph2}/>
             <Buttons>
-              <a href='https://www.gregoryblood.me/honey/#/' target='_blank'><HotButton>Visit</HotButton></a>
-              <a href='https://github.com/gregoryblood/gregoryblood.github.io/tree/master/honey' target='_blank'><HotButton>GitHub</HotButton></a>
+              <a href='https://www.gregoryblood.me/projects/honey/#/' target='_blank'><HotButton>Visit</HotButton></a>
+              <a href='https://github.com/gregoryblood/gregoryblood.github.io/tree/master/projects/honey' target='_blank'><HotButton>GitHub</HotButton></a>
             </Buttons>
             <Header>
               What I Learned
