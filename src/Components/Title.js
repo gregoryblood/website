@@ -151,7 +151,7 @@ const NavBar = styled.div `
   }
 `;
 const NavBarItems = styled.div `
-  background: rgb(34, 38, 41, 0.9);
+  background: rgb(25, 28, 31, 0.9);
   margin: 0 auto;
   width: 95vw;
   height: 100%;
@@ -406,7 +406,7 @@ const Icon = styled.a `
   -webkit-transition-duration: 0.6s;
   z-index: 2;
   font-size: 3rem;
-  background: rgb(34, 38, 41, 0.9);
+  background: rgb(25, 28, 31, 0.9);
   &:hover {
     color: rgb(34, 38, 41, 0.9);
     background: ${notWhite};

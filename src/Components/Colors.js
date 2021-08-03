@@ -1,6 +1,6 @@
 export const flavorColor = "#86c232";
 export const flavorColor2 = "#61892f";
-export const backgroundColor = "#222629";
+export const backgroundColor = "#191c1f";
 export const darkGray = "#47484f";
 export const lightGray = "#6b6e70";
 export const notWhite = "#ebebeb";
