@@ -4,9 +4,9 @@ import whattowear from '../Images/whattowear.png';
 import ships from '../Images/ships.png';
 import mb3 from '../Images/mb3.png';
 import kg1 from '../Images/kg1.PNG';
-import ph1 from '../Images/ph1.jpg';
-import mm1 from '../Images/mm1.png';
-import osu from '../Images/osu.PNG';
+import ph1 from '../Images/ph1.png';
+import mm1 from '../Images/spotify.png';
+import osu from '../Images/beavers.png';
 import { NavLink } from 'react-router-dom';
 import { flavorColor } from './Colors';
 
@@ -57,8 +57,10 @@ export class Projects extends React.Component {
         <Games>Check out what I've built!</Games> 
         <CardArea id="work"  >
           
-          <Card to={`/capstone`}  show={scroll} >
-              <Img src={ osu }/>
+          <Card to={`/capstone`} 
+            src={ osu } 
+            show={scroll} 
+            size = {'450px 300px'}>
               <CardWords>
                 <CardTitle>Capstone</CardTitle>
                 <CardFlavor>
@@ -66,8 +68,11 @@ export class Projects extends React.Component {
                 </CardFlavor>  
               </CardWords>
           </Card>
-          <Card to={`/purehoney`} show={scroll}>
-            <Img src={ph1}/>
+          <Card to={`/purehoney`}
+            pureHoney={true}
+            src={ph1}
+            show={scroll}
+            size = {'400px 400px'}>
             <CardWords>
               <CardTitle>Pure Honey</CardTitle>
               <CardFlavor>
@@ -75,8 +80,11 @@ export class Projects extends React.Component {
               </CardFlavor>
             </CardWords>
           </Card>
-          <Card to={`/musicmajik`} show={scroll} >
-            <Img src={mm1}/>
+          <Card to={`/musicmajik`}
+            src={mm1}
+            show={scroll}
+            isBlack={true}
+            size = {'450px 300px'}>
             <CardWords>
               <CardTitle>Music Majik</CardTitle>
               <CardFlavor>
@@ -87,8 +95,12 @@ export class Projects extends React.Component {
         </CardArea>
         <Games>Try some of the games I made while you're here!</Games> 
         <CardArea>
-          <Card to={`/kings-gambit`} show={scroll} >
-            <Img src={ kg1 }/>
+          <Card to={`/kings-gambit`}
+            src={ kg1 }
+            show={scroll}
+            isBlack={true}
+            size = {'586px 300px'}
+            >
             <CardWords>
               <CardTitle>King's Gambit</CardTitle>
               <CardFlavor>
@@ -96,8 +108,11 @@ export class Projects extends React.Component {
               </CardFlavor>
             </CardWords>
           </Card>
-          <Card to={`/master-blaster`} show={scroll}>
-            <Img src={ mb3 }/>
+          <Card to={`/master-blaster`}
+          src={ mb3 }
+          show={scroll}
+          hasTitle={true}
+          size = {'400px 300px'}>
             <CardWords>
               <CardTitle>Master Blaster</CardTitle>
               <CardFlavor>
@@ -148,17 +163,31 @@ const Card = styled(NavLink)`
   max-width: 400px;
   max-height: 300px;
   margin: 1rem;
-  transition-duration: 1s;
-  -webkit-transition-duration: 1s;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
   border-radius: 16px;
   position: relative;
   opacity: ${props => props.show ? 1 : 0};
+  
+  ${props => props.isBlack ? 'background: #000000;' : 'background: #ffffff;'}
+
+  background-image: url(${props => props.src});
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: ${props => props.size};
+  color: transparent;
   @media(max-width: 880px) {
     width: 95vw;
+  }
+  &:hover {
+    background-image: url(${props => props.src});
+    transform: scale(1.1);
+    ${props => props.isBlack || props.hasTitle ? 'color: white;' : 'color: black;'}
   }
 `;
 
 const Img = styled.img `
+  display: none;
   position: relative;
   z-index: 2;
   height: 100%;
@@ -166,42 +195,32 @@ const Img = styled.img `
   border-radius: 16px;
   margin-top: 0px;
   float: center;
-  transition-duration: 0.3s;
-  -webkit-transition-duration: 0.3s;
-  transition: transform 300ms ease-in-out;
-  object-fit: cover;
-  &:hover {
-    transform: scale(1.1);
 
-  }
+  object-fit: cover;
+
 `;
 const CardWords = styled.div `
-  display: none;
   width: 100%;
   height: 100%;
   position: absolute;
+  border-radius: 16px;
   top: 0;
   z-index: 5;
   pointer-events:none;
-  background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
-  &:hover {
-    color: black;
-  }
+
 `;
 const CardTitle = styled.div `
   position: absolute;
-  bottom: 0;
-  left: 0;
-  font-size: 36px;
+  bottom: 0.3rem;
+  left: 0.5rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  color: white;
 `;
 
 const CardFlavor = styled.div `
   display: none;
   font-size: 24px;
   text-align: right;
-  color: gray;
   font-style: italic;
 `;
 const Games = styled.div `

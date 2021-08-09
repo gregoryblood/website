@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.a617e044.chunk.css",
-    "main.js": "/static/js/main.097836ff.chunk.js",
-    "main.js.map": "/static/js/main.097836ff.chunk.js.map",
+    "main.js": "/static/js/main.4668f5ed.chunk.js",
+    "main.js.map": "/static/js/main.4668f5ed.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.16922f3b.js",
     "runtime-main.js.map": "/static/js/runtime-main.16922f3b.js.map",
     "static/js/2.1756d479.chunk.js": "/static/js/2.1756d479.chunk.js",
@@ -12,6 +12,7 @@
     "index.html": "/index.html",
     "static/css/main.a617e044.chunk.css.map": "/static/css/main.a617e044.chunk.css.map",
     "static/js/2.1756d479.chunk.js.LICENSE.txt": "/static/js/2.1756d479.chunk.js.LICENSE.txt",
+    "static/media/beavers.adca42bd.png": "/static/media/beavers.adca42bd.png",
     "static/media/capstone.b904821c.PNG": "/static/media/capstone.b904821c.PNG",
     "static/media/kg1.f2524a9f.PNG": "/static/media/kg1.f2524a9f.PNG",
     "static/media/kg2.2e76e054.PNG": "/static/media/kg2.2e76e054.PNG",
@@ -19,14 +20,13 @@
     "static/media/mb1.f674b433.png": "/static/media/mb1.f674b433.png",
     "static/media/mb2.a4637d1e.png": "/static/media/mb2.a4637d1e.png",
     "static/media/mb3.9538302e.png": "/static/media/mb3.9538302e.png",
-    "static/media/mm1.c85f3f59.png": "/static/media/mm1.c85f3f59.png",
     "static/media/mm2.117643ac.png": "/static/media/mm2.117643ac.png",
     "static/media/mm3.b4bbbd19.png": "/static/media/mm3.b4bbbd19.png",
     "static/media/mm4.4c49bbd8.png": "/static/media/mm4.4c49bbd8.png",
-    "static/media/osu.01b53e71.PNG": "/static/media/osu.01b53e71.PNG",
-    "static/media/ph1.7603c0ff.jpg": "/static/media/ph1.7603c0ff.jpg",
+    "static/media/ph1.36b5da9e.png": "/static/media/ph1.36b5da9e.png",
     "static/media/ph2.f880b339.png": "/static/media/ph2.f880b339.png",
     "static/media/ships.2c333a60.png": "/static/media/ships.2c333a60.png",
+    "static/media/spotify.e01b4c90.png": "/static/media/spotify.e01b4c90.png",
     "static/media/wave.030c9625.svg": "/static/media/wave.030c9625.svg",
     "static/media/whattowear.0bb55bf5.png": "/static/media/whattowear.0bb55bf5.png"
   },
@@ -34,6 +34,6 @@
     "static/js/runtime-main.16922f3b.js",
     "static/js/2.1756d479.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.097836ff.chunk.js"
+    "static/js/main.4668f5ed.chunk.js"
   ]
 }
