@@ -15,7 +15,7 @@ export const Core = styled.div `
         top: 9rem;
     }
 `;
-export  const Body = styled.div `
+export const Body = styled.div `
     padding: 1rem 1rem 10rem 1rem;
     margin: 0 auto;
     max-width: 900px;
@@ -34,10 +34,10 @@ export const TitleBar = styled.div `
     
 `;
 export const PTitle = styled.div `
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: bold;
     color: white;
-    padding: 20px 20px 0 20px;
+    padding: 2.2rem 0 0 0;
     @media(max-width: 768px) {
         text-align: center;
         font-size: 36px;
@@ -53,8 +53,7 @@ export const Text = styled.div `
     font-size: 1.5rem;
 `;
 export const Flavor = styled.div `
-    padding: 0px 0 10px 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-style: italic;
     color: white;
     padding: 0px 20px 20px 20px;
@@ -103,7 +102,7 @@ export const Tools = styled.div`
     margin: 10px 0; 
     font-style: italic;
     color: #525252;
-    font-size: 1rem;
+    font-size: 1.2rem;
 `;
 export const Buttons = styled.ul `
   list-style-type: none;

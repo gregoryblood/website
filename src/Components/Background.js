@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Projects from './Projects';
-import { flavorColor2, lightGray, notWhite } from './Colors';
+import { flavorColor, flavorColor2, lightGray, notWhite } from './Colors';
 
 
 export class Skills extends React.Component{  
@@ -12,7 +12,6 @@ export class Skills extends React.Component{
       };
 
     }
-
     render() {
       return (
         <React.Fragment>
@@ -37,8 +36,9 @@ export class Skills extends React.Component{
                 - Lead classes of 30+ students to go in-depth into topics 
               </SmallText>
               <SmallText>
-                - Worked with professors in finding ways to improve our course
+                - Utilized TA experience and student relationships to improve courses
               </SmallText>
+              <LetterButton target="_blank" rel="noopener noreferrer" href={`https://raw.githubusercontent.com/gregoryblood/gregoryblood.github.io/master/Gregory_Blood_recommendation.pdf`}>Letter of Recommendation</LetterButton>
               <Header>
                 Education
               </Header>
@@ -59,7 +59,6 @@ export class Skills extends React.Component{
         </React.Fragment>
         
       );
-  
     };
   }
   const Section = styled.div `
@@ -87,7 +86,8 @@ export class Skills extends React.Component{
   const Header = styled.div `
     text-align: center;
     font-size: 1.3rem;
-    padding: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 0.5rem;
   `;
   const Title = styled.div `
     font-size: 2rem;
@@ -101,5 +101,32 @@ export class Skills extends React.Component{
   const SmallText = styled.div `
     text-align: left;
     font-size: 1.5rem;
+  `;
+  const LetterButton = styled.a `
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition-duration: 0.4s;
+      -webkit-transition-duration: 0.4s;
+      border-radius: 8px;
+      border-style: solid;
+      color: ${notWhite};
+      border-color: black;
+      background: black;
+      height: 30px;
+      display: block;
+      width: 20rem;
+      text-align: center;
+      margin: 2rem auto;
+      padding: 1rem;
+      &:hover {
+        color: black;
+        border-color: black;
+        background: transparent;
+      }
+      @media(max-width: 813px) {
+        width: 100%auto;
+      }
   `;
 export default Skills;

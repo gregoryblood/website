@@ -82,7 +82,7 @@ export class Title extends React.Component {
                         duration={400}>
                 Skills
               </NavLink>
-              <NavLinkButton target='_blank' href={'https://raw.githubusercontent.com/gregoryblood/gregoryblood.github.io/master/resume.pdf'}>
+              <NavLinkButton rel="noopener noreferrer" target='_blank' href={'https://raw.githubusercontent.com/gregoryblood/gregoryblood.github.io/master/resume.pdf'}>
                 Resume 
               </NavLinkButton>
             </NavLinks>
@@ -115,10 +115,10 @@ export class Title extends React.Component {
           }
       </Fade>
         <Icons>
-          <Icon target="_blank" href={`https://github.com/gregoryblood`}>
+          <Icon target="_blank" rel="noopener noreferrer" href={`https://github.com/gregoryblood`}>
             <AiOutlineGithub/>
           </Icon>
-          <Icon target="_blank" href={`https://www.linkedin.com/in/gregoryblood/`}>
+          <Icon target="_blank" rel="noopener noreferrer" href={`https://www.linkedin.com/in/gregoryblood/`}>
             <AiFillLinkedin/>
           </Icon>
         </Icons>
@@ -151,7 +151,7 @@ const NavBar = styled.div `
   }
 `;
 const NavBarItems = styled.div `
-  background: rgb(25, 28, 31, 0.9);
+  background: rgb(0, 0, 0, 0.9);
   margin: 0 auto;
   width: 95vw;
   height: 100%;
@@ -336,7 +336,7 @@ const WorkButton = styled(Link) `
   border-color: transparent;
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
-  font-size:  32px;
+  font-size: 1.9rem;
   position: fixed;
   top: calc(35vh + 175px);
   left: 5vw;
@@ -406,9 +406,9 @@ const Icon = styled.a `
   -webkit-transition-duration: 0.6s;
   z-index: 2;
   font-size: 3rem;
-  background: rgb(25, 28, 31, 0.9);
+  background: rgb(0, 0, 0, 0.9);
   &:hover {
-    color: rgb(34, 38, 41, 0.9);
+    color: rgb(0, 0, 0, 0.9);
     background: ${notWhite};
   }
   @media(max-width: 813px) {

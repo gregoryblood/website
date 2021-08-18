@@ -34,7 +34,6 @@ export class Projects extends React.Component {
       document.documentElement.clientHeight
   
     const scrolled = winScroll / height;
-    console.log(scrolled);
     if (scrolled > 0.1) {
       if (!this.state.scroll) {
         this.setState({

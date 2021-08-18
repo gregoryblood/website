@@ -28,8 +28,8 @@ export class Capstone extends React.Component {
             </Header>
             <Tools>React Native (Mobile Development) - Express - Postgres (Database) - SQL</Tools>
             <Text>
-            This app was for my senior capstone, a 9-month group project. I picked this specific 
-          project because I wanted to something that I felt challenged me and had a tangable result 
+            This app was for my 9-month long senior capstone. I picked this specific 
+          project because I wanted to accomplish a goal that I felt challenged me and had a tangable result 
           that I would enjoy talking about.<br/><br/>
           Our goal given to us by a professor in the College of Business at Oregon State University was 
           to develop an app for the school that streamlines the process for students to find out about events 
